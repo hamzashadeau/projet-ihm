@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="CompteSpacee" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.CompteSpaceController">
+   <children>
+      <ImageView fitHeight="485.0" fitWidth="733.0" opacity="0.28" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/agence-voyage.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="57.0" fitWidth="200.0" layoutX="98.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/unnamed.png" />
+         </image>
+      </ImageView>
+      <BorderPane fx:id="borderpane" layoutX="182.0" layoutY="63.0" prefHeight="423.0" prefWidth="551.0" />
+      <Pane layoutY="60.0" prefHeight="429.0" prefWidth="182.0" style="-fx-background-color: blue;">
+         <children>
+            <Button fx:id="edit" layoutY="26.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #e74b24;" text="edit compte" textFill="#220d07" />
+            <Button fx:id="voyagehistorique" layoutY="105.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #e74b24;" text="voyage historique" />
+            <Button fx:id="volhistorique" layoutY="174.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #e74b24;" text="vol historique" />
+            <Button fx:id="logout" layoutY="364.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #e74b24;" text="log out" />
+         </children>
+      </Pane>
+      <Label layoutX="458.0" layoutY="14.0" text="bonjour Mr" />
+      <Label fx:id="moi" layoutX="532.0" layoutY="14.0" prefHeight="17.0" prefWidth="171.0" />
+   </children>
+</AnchorPane>

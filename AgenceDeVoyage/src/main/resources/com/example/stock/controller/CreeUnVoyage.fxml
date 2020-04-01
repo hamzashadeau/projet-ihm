@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="creeUnvoyage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.73" prefHeight="386.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.CreeUnVoyageController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="696.0" layoutY="-12.0" opacity="0.56" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/Capture.PNG" />
+         </image>
+      </ImageView>
+      <Label layoutX="178.0" layoutY="7.0" prefHeight="17.0" prefWidth="245.0" text="remplir la fourmule">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="39.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="130.0" prefHeight="15.0" prefWidth="108.0" text="nom  de client :" textFill="#170202">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="162.0" prefHeight="17.0" prefWidth="108.0" text="prenom de client :" textFill="#1e0808">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="130.0" layoutY="290.0" prefHeight="17.0" prefWidth="68.0" text="email :" textFill="#0d0303">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="403.0" layoutY="46.0" prefHeight="17.0" prefWidth="99.0" text="id de voyage :">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="idDeVoyage" layoutX="517.0" layoutY="45.0" prefHeight="18.0" prefWidth="178.0" />
+      <TextField fx:id="nomClient" layoutX="221.0" layoutY="125.0" prefHeight="26.0" prefWidth="186.0" promptText="nom de client" />
+      <TextField fx:id="prenomClient" layoutX="225.0" layoutY="158.0" opacity="0.5" prefHeight="26.0" prefWidth="186.0" promptText="prenom de client" />
+      <TextField fx:id="email" layoutX="225.0" layoutY="286.0" opacity="0.5" prefHeight="26.0" prefWidth="178.0" promptText="\@gmail.com" />
+      <Label layoutX="100.0" layoutY="93.0" prefHeight="18.0" prefWidth="80.0" text="id client :">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IdClient" layoutX="198.0" layoutY="89.0" prefHeight="26.0" prefWidth="178.0" promptText="id client" />
+      <ComboBox fx:id="ages" layoutX="109.0" layoutY="192.0" prefHeight="29.0" prefWidth="178.0" promptText="choisir l'age" />
+      <RadioButton fx:id="rbMale" layoutX="206.0" layoutY="251.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="87.0" text="male" />
+      <RadioButton fx:id="rbFemale" layoutX="312.0" layoutY="247.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="female" />
+      <Label layoutX="130.0" layoutY="253.0" text="gender :">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

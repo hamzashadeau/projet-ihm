@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="acceuil"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.Acceuil">
+   <children>
+      <ImageView fitHeight="485.0" fitWidth="733.0" layoutX="-1.0" layoutY="-1.0" opacity="0.28" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/agence-voyage.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="58.0" fitWidth="157.0" layoutX="124.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/unnamed.png" />
+         </image>
+      </ImageView>
+      <BorderPane fx:id="border" cacheShape="false" centerShape="false" layoutY="95.0" prefHeight="390.0" prefWidth="732.0" scaleShape="false">
+         <center>
+            <Label prefHeight="43.0" prefWidth="550.0" text="welcome to the voyages tours" textFill="#f81616" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="36.0" />
+               </font>
+            </Label>
+         </center>
+      </BorderPane>
+      <Pane layoutY="57.0" prefHeight="38.0" prefWidth="710.0">
+         <children>
+            <Button fx:id="espace" layoutY="-2.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="382.0" text="chercher Un Voyage / Vol" />
+            <Button fx:id="logup" layoutX="548.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="178.0" text="Log Up" />
+            <Button fx:id="login" layoutX="382.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="166.0" text="Login" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

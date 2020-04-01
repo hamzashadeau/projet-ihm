@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="acceuiprincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.AcceuilPrincipal">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="697.0" layoutX="-3.0" layoutY="-3.0" opacity="0.7" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../../image/Capture.PNG" />
+         </image>
+      </ImageView>
+      <TextField fx:id="destination" layoutX="83.0" layoutY="167.0" prefHeight="37.0" prefWidth="248.0" promptText="destination" style="-fx-border-color: blue; -fx-border-width: 3;" />
+      <Button fx:id="chercherUnvoyage" layoutX="177.0" layoutY="242.0" mnemonicParsing="false" opacity="0.7" prefHeight="44.0" prefWidth="367.0" style="-fx-background-color: red;" text="Chercher " textFill="#221717">
+         <font>
+            <Font name="Courier New" size="24.0" />
+         </font></Button>
+      <ComboBox fx:id="typeDeVoyage" layoutX="357.0" layoutY="167.0" opacity="0.9" prefHeight="31.0" prefWidth="242.0" promptText="voyage/vol" style="-fx-background-radius: 25;" />
+   </children>
+</AnchorPane>
