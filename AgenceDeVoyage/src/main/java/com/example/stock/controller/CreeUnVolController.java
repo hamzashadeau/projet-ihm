@@ -9,6 +9,7 @@ import com.example.stock.Bean.Vol;
 import com.example.stock.Service.Facade.ClientVolService;
 import com.example.stock.Service.Facade.UserService;
 import com.example.stock.Service.Facade.VolService;
+import com.example.stock.Tools.Tools;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -47,8 +48,6 @@ public class CreeUnVolController {
 	@FXML
 	private ComboBox<Integer> ages;
 	@FXML
-	private TextField IdClient;
-	@FXML
 	private Button save;
 	@FXML
 	private AnchorPane creeUnvol;
@@ -61,7 +60,7 @@ public class CreeUnVolController {
 	private ClientVolService clientVolService;
 	private ClientVol clientVol = new ClientVol();
 	private User user = new User();
-private Vol vol = new Vol();
+private Vol vol1 = new Vol();
 private Double prixmod; 
 	@FXML
 	public void initialize() {
@@ -87,8 +86,7 @@ private Double prixmod;
 		super();
 		this.fxWeaver = fxWeaver;
 	}
-
-	public void sauvgarderClient(Long id,String destination,String prix) {
+	public void sauvgarderClient(Vol vol,String prix) {
 User user = loginController.user;
 if(user!=null) {
 	nomClient.setText(user.getLasName());
@@ -101,25 +99,22 @@ if(user!=null) {
 		rbFemale.setSelected(true);
 	}
 }
- vol = volService.findByDestinationAndId(destination, id);
-idDeVoyage.setText(String.valueOf(id));
+vol1 = vol;
+idDeVoyage.setText(String.valueOf(vol.getId()));
  prixmod = new Double(prix);
-
-
 //		show();
 	}
 	public void save() {
-			Long IdC = Long.parseLong(IdClient.getText());
-			clientVol.setId(IdC);
+		clientVol.setId(Tools.generateRandomIntIntRange(1, 200));
 			clientVol.setNom(nomClient.getText());
 			clientVol.setPrenom(prenomClient.getText());
 			// int Age = Integer.parseInt(age.getText());
 			clientVol.setAge(getType());
 			clientVol.setGender(getGender());
 			clientVol.setEmail(email.getText());
-			clientVol.setVol(vol);
+			clientVol.setVol(vol1);
 			clientVol.getVol().setPrix(prixmod);
 			clientVolService.save(clientVol);
-			user.getVols().add(vol);
+			user.getVols().add(vol1);
 	}
 }

@@ -64,6 +64,8 @@ public class Client {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	
 	public Client(Long id, String nom, String prenom, String email, int age, String gender, List<Voyage> voyages) {
 		super();
 		this.id = id;

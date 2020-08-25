@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="volSpace" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.VolSpaceController">
    <children>
@@ -13,15 +15,18 @@
             <Image url="@../../../image/agence-voyage.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="listevoyage" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" style="-fx-background-color: blue;" text="listevol" />
-      <Button fx:id="voyageinfo" layoutX="182.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" style="-fx-background-color: blue;" text="vol info" />
-      <Button fx:id="confirmation" layoutX="356.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" style="-fx-background-color: blue;" text="confirmation" />
-      <ImageView fitHeight="57.0" fitWidth="200.0" layoutX="98.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../image/unnamed.png" />
-         </image>
-      </ImageView>
-      <BorderPane fx:id="borderpane" layoutY="91.0" prefHeight="395.0" prefWidth="733.0" />
-      <Button fx:id="compte" layoutX="538.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" style="-fx-background-color: blue;" text="success" />
+      <Button fx:id="listevoyage" mnemonicParsing="false" prefHeight="39.0" prefWidth="171.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="listevol" textFill="#f8f1f1" />
+      <Button fx:id="voyageinfo" layoutX="171.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="171.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="vol info" textFill="#fcf2f2" />
+      <Button fx:id="confirmation" layoutX="342.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="156.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="confirmation" textFill="#fcf9f9" />
+      <BorderPane fx:id="borderpane" layoutY="40.0" prefHeight="446.0" prefWidth="733.0">
+         <center>
+            <Label text="cliquer sur listevol" textFill="#030540" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+         </center></BorderPane>
+      <Button fx:id="compte" layoutX="498.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #030540; -fx-font-size: 18;" text="success" textFill="#e8e0e0" />
+      <Button fx:id="retour" layoutX="641.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #D8371A; -fx-font-size: 18;" text="retour" textFill="#f8f3f3" />
    </children>
 </AnchorPane>

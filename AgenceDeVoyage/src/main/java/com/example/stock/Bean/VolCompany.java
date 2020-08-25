@@ -34,6 +34,8 @@ public void setDescription(String description) {
 public String toString() {
 	return "VolCompany [id=" + id + ", nom=" + nom + ", description=" + description + "]";
 }
+
+
 public VolCompany(Long id, String nom, String description) {
 	super();
 	this.id = id;

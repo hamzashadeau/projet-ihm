@@ -44,29 +44,26 @@ public class Acceuil {
 		Stage stage = new Stage();
 		//stage.setScene(new Scene(acceuil));
 		//stage.show();
-		logup.setStyle("-fx-background-color:blue");
-		login.setStyle("-fx-background-color:blue");
-		espace.setStyle("-fx-background-color:blue");		
 		logup.setOnAction(
 				actionevent -> {
 			border.setCenter(Tools.loadPage(fxWeaver, registerLoginController.class, AnchorPane.class));
-			logup.setStyle("-fx-background-color:red");
-			login.setStyle("-fx-background-color:blue");
-			espace.setStyle("-fx-background-color:blue");
+			logup.setStyle("-fx-background-color:#C13A0A");
+			login.setStyle("-fx-background-color: #030540");
+			espace.setStyle("-fx-background-color: #030540");
 		});
 		login.setOnAction(
 				actionevent -> {
 			border.setCenter(Tools.loadPage(fxWeaver, loginController.class, AnchorPane.class));
-			logup.setStyle("-fx-background-color:blue");
-			login.setStyle("-fx-background-color:red");
-			espace.setStyle("-fx-background-color:blue");
+			logup.setStyle("-fx-background-color: #030540");
+			login.setStyle("-fx-background-color:#C13A0A");
+			espace.setStyle("-fx-background-color: #030540");
 				});
 		espace.setOnAction(
 				actionevent -> {
 			border.setCenter(Tools.loadPage(fxWeaver, AcceuilPrincipal.class, AnchorPane.class));
-			logup.setStyle("-fx-background-color:blue");
-			espace.setStyle("-fx-background-color:red");
-			login.setStyle("-fx-background-color:blue");
+			logup.setStyle("-fx-background-color: #030540");
+			espace.setStyle("-fx-background-color:#C13A0A");
+			login.setStyle("-fx-background-color: #030540");
 				});
 	}
 	

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.stock.Bean.User;
 import com.example.stock.Service.Facade.UserService;
+import com.example.stock.Tools.Tools;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,8 +32,6 @@ import net.rgielen.fxweaver.core.FxmlView;
 public class registerLoginController {
 	private final FxWeaver fxWeaver;
 	private Stage stage;
-	@FXML
-	private TextField IdUser;
 	@FXML
 	private TextField firstName;
 	@FXML
@@ -105,22 +104,25 @@ public class registerLoginController {
 			Types.add(i);
 		}
 	ages.setItems(Types);
+	
+	
 	save.setOnAction(actionEvent -> { 
-		if(IdUser.getText().isEmpty() && firstName.getText().isEmpty() &&  lastName.getText().isEmpty() && adress.getText().isEmpty() && email.getText().isEmpty() && motpass.getText().isEmpty() && motDepassCon.getText().isEmpty() && getGender().isEmpty() && getType() == null)
+		if( firstName.getText().isEmpty() &&  lastName.getText().isEmpty() && adress.getText().isEmpty() && 
+				email.getText().isEmpty() && motpass.getText().isEmpty() && motDepassCon.getText().isEmpty() && getGender().isEmpty() && getType() == null)
 		{
-			errorid.setText("champ vide");
 			errorfirstname.setText("champ vide");
 			errorlastname.setText("champ vide");
 			erroradress.setText("champ vide");
 			eroremail.setText("champ vide");
 			errormdp.setText("champ vide");
 			errorcmdp.setText("champ vide");
-		}else if(!IdUser.getText().isEmpty() && !firstName.getText().isEmpty() &&  !lastName.getText().isEmpty() && !adress.getText().isEmpty() && !email.getText().isEmpty() && !motpass.getText().isEmpty() && !motDepassCon.getText().isEmpty() && !getGender().isEmpty() && getType() != null){
+		}else if(!firstName.getText().isEmpty() &&  !lastName.getText().isEmpty() && !adress.getText().isEmpty() && !email.getText().isEmpty() && 
+				!motpass.getText().isEmpty() && !motDepassCon.getText().isEmpty() && !getGender().isEmpty() && getType() != null){
 			if(validate("First Name", firstName.getText(), "[a-zA-Z]+",errorfirstname) &&
 			    	   validate("Last Name",lastName.getText() , "[a-zA-Z]+",errorlastname) &&
 			    	   validate("Email", email.getText(), "[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+",eroremail)){
-			user.setId(Long.parseLong(IdUser.getText()));
-			user.setFirstName(firstName.getText());
+				user.setId(Tools.generateRandomIntIntRange(1, 200));
+				user.setFirstName(firstName.getText());
 			user.setLasName(lastName.getText());
 			user.setAdress(adress.getText());
 			user.setAge(getType());
@@ -130,9 +132,6 @@ public class registerLoginController {
 			userService.save(user);
 			anotherControllerAndView2.getController().initialize();
 			}}else {
-		if(IdUser.getText().isEmpty()) {
-			errorid.setText("champ vide");
-		} 
 		if(firstName.getText().isEmpty()) {
 			errorfirstname.setText("champ vide");
 		}

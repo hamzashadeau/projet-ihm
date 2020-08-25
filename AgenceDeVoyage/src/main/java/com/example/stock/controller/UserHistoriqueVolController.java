@@ -138,9 +138,10 @@ loadUserDetails();
 		volList.clear();
 		List<ClientVol> volClients = volClientService.findAll();
 		for (ClientVol volClient : volClients) {
-			if (volClient.getEmail().equals(loginController.user.getLogin()))
+			if (volClient.getEmail().equals(loginController.user.getLogin())) {
 				volList.add(volClient.getVol());
-		}
+		System.out.println(volClient.getVol());
+			}}
 		volTable.setItems(volList);
 	}
 	public void afficherListe(User user) {

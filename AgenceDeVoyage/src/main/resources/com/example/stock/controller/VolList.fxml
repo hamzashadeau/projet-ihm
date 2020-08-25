@@ -8,27 +8,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="volliste" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.volListController">
+<AnchorPane fx:id="volliste" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.volListController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="697.0" layoutX="-3.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="446.0" fitWidth="733.0" layoutX="-3.0" opacity="0.7" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <TableView fx:id="volTable" layoutX="11.0" layoutY="79.0" opacity="0.5" prefHeight="215.0" prefWidth="665.0">
+      <TableView fx:id="volTable" layoutY="119.0" opacity="0.7" prefHeight="322.0" prefWidth="728.0">
         <columns>
           <TableColumn fx:id="colVolId" prefWidth="67.0" text="id" />
           <TableColumn fx:id="coldestination" prefWidth="115.0" text="destination" />
             <TableColumn fx:id="coldeteDebut" prefWidth="128.0" text="date de debut" />
             <TableColumn fx:id="coldeteDeretour" prefWidth="98.0" text="date de retour" />
-            <TableColumn fx:id="colprix" prefWidth="166.0" text="prix" />
+            <TableColumn fx:id="colprix" prefWidth="317.0" text="prix" />
         </columns>
       </TableView>
-      <Label layoutX="226.0" layoutY="23.0" text="liste de vol disponible">
+      <Label layoutX="133.0" layoutY="14.0" text="liste de vol disponible" textFill="#eb9c12">
          <font>
-            <Font name="Century" size="24.0" />
+            <Font name="Century" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="53.0" prefHeight="17.0" prefWidth="211.0" text="selectioner le voyage convenabe:" />
+      <Label layoutX="40.0" layoutY="93.0" prefHeight="17.0" prefWidth="211.0" text="selectioner le voyage convenabe:" textFill="#241a57" />
    </children>
 </AnchorPane>

@@ -21,15 +21,15 @@
          </image>
       </ImageView>
       <BorderPane fx:id="borderpane" layoutX="182.0" layoutY="63.0" prefHeight="423.0" prefWidth="551.0" />
-      <Pane layoutY="60.0" prefHeight="429.0" prefWidth="182.0" style="-fx-background-color: blue;">
+      <Pane layoutY="60.0" prefHeight="429.0" prefWidth="182.0" style="-fx-background-color: #1E424F;">
          <children>
-            <Button fx:id="edit" layoutY="26.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #e74b24;" text="edit compte" textFill="#220d07" />
-            <Button fx:id="voyagehistorique" layoutY="105.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #e74b24;" text="voyage historique" />
-            <Button fx:id="volhistorique" layoutY="174.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #e74b24;" text="vol historique" />
+            <Button fx:id="edit" layoutY="53.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16;" text="edit compte" textFill="#f2f0ef" />
+            <Button fx:id="voyagehistorique" layoutY="120.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="voyage historique" textFill="#fcf3f3" />
+            <Button fx:id="volhistorique" layoutY="189.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="vol historique" textFill="#f8f1f1" />
             <Button fx:id="logout" layoutY="364.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #e74b24;" text="log out" />
          </children>
       </Pane>
-      <Label layoutX="458.0" layoutY="14.0" text="bonjour Mr" />
-      <Label fx:id="moi" layoutX="532.0" layoutY="14.0" prefHeight="17.0" prefWidth="171.0" />
+      <Label layoutX="282.0" layoutY="14.0" prefHeight="35.0" prefWidth="150.0" style="-fx-font-size: 26px;" text="bonjour Mr" />
+      <Label fx:id="moi" layoutX="438.0" layoutY="14.0" prefHeight="17.0" prefWidth="171.0" style="-fx-font-size: 26px;" />
    </children>
 </AnchorPane>

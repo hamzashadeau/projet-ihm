@@ -20,7 +20,7 @@ public class MyJavaFXApp extends Application {
         ApplicationContextInitializer<GenericApplicationContext> initializer =
                 context -> {
                     context.registerBean(Application.class, () -> MyJavaFXApp.this);
-                    context.registerBean(Parameters.class, this::getParameters); // for demonstration, not really needed
+                    context.registerBean(Parameters.class, this::getParameters); 
                 };
         this.context = new SpringApplicationBuilder()
                 .sources(AgenceDeVoyageApplication.class)

@@ -65,6 +65,7 @@ public class VolInfoController {
 	}
 
 	public void afficherInfo(Vol vol) {
+		idDeVol.setText(String.valueOf(vol.getId()));
 		// Vol vol = volService.findByDestination(destination);
 		this.destination.setText(vol.getDestination());
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");

@@ -106,10 +106,11 @@ public class User {
 		this.motDePass = motDePass;
 	}
 
-	public User(Long id, String firstName, String lasName, String adress, String gender, int age, String login,
-			String motDePass, List<Voyage> voyages, List<Vol> vols) {
+	
+
+	public User(String firstName, String lasName, String adress, String gender, int age, String login, String motDePass,
+			List<Voyage> voyages, List<Vol> vols) {
 		super();
-		this.id = id;
 		this.firstName = firstName;
 		this.lasName = lasName;
 		this.adress = adress;

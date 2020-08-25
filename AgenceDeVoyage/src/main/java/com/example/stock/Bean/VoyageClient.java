@@ -70,16 +70,17 @@ public class VoyageClient {
 		this.gender = gender;
 	}
 
+	
 
-	public VoyageClient(Long id, Voyage voyage, String nom, String prenom, String email, int age, String gender) {
+	public VoyageClient(Long id, String nom, String prenom, String email, int age, String gender, Voyage voyage) {
 		super();
 		this.id = id;
-		this.voyage = voyage;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.age = age;
 		this.gender = gender;
+		this.voyage = voyage;
 	}
 
 	public VoyageClient() {

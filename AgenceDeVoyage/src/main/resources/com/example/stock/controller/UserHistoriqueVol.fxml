@@ -11,12 +11,12 @@
 
 <AnchorPane fx:id="uservolList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.UserHistoriqueVolController">
    <children>
-      <ImageView fitHeight="423.0" fitWidth="551.0" layoutX="-3.0" opacity="0.7" pickOnBounds="true">
+      <ImageView fitHeight="423.0" fitWidth="557.0" layoutX="-3.0" opacity="0.7" pickOnBounds="true">
          <image>
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <TableView fx:id="volTable" layoutX="4.0" layoutY="99.0" opacity="0.74" prefHeight="203.0" prefWidth="543.0">
+      <TableView fx:id="volTable" fixedCellSize="0.0" layoutX="4.0" layoutY="99.0" opacity="0.74" prefHeight="203.0" prefWidth="543.0">
         <columns>
           <TableColumn fx:id="colVolId" prefWidth="67.0" text="id" />
           <TableColumn fx:id="coldestination" prefWidth="87.0" text="destination" />
@@ -26,13 +26,13 @@
             <TableColumn fx:id="colVoletat" prefWidth="102.0" text="etat" />
         </columns>
       </TableView>
-      <Label layoutX="156.0" layoutY="30.0" prefHeight="17.0" prefWidth="287.0" text="vol historique" textFill="#0d0808">
+      <Label layoutX="156.0" layoutY="30.0" prefHeight="17.0" prefWidth="287.0" text="vol historique" textFill="#e48716">
          <font>
-            <Font name="Century" size="18.0" />
+            <Font name="Century" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="Allvoyage" layoutX="-3.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: blue;" text="find All vol" />
-      <Button fx:id="delete" layoutX="243.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: red;" text="delete" />
-      <Button fx:id="deleteAll" layoutX="412.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: red;" text="delete All" />
+      <Button fx:id="Allvoyage" layoutX="-3.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="find All vol" textFill="#f5f0f0" />
+      <Button fx:id="delete" layoutX="243.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: #63122A; -fx-font-size: 16px;" text="delete" textFill="#f5f2f2" />
+      <Button fx:id="deleteAll" layoutX="412.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #CD2433; -fx-font-size: 16px;" text="delete All" textFill="#f8f5f5" />
    </children>
 </AnchorPane>

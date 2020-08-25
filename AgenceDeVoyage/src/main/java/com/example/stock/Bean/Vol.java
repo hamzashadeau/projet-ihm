@@ -57,14 +57,13 @@ public class Vol {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	
-	
 	public String getEtat() {
 		return etat;
 	}
 	public void setEtat(String etat) {
 		this.etat = etat;
 	}
+	
 	public Vol(Long id, String destination, Date dateDebut, Date dateDeRetour, double prix, String etat) {
 		super();
 		this.id = id;

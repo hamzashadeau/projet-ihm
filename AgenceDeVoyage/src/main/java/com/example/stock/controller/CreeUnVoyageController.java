@@ -11,6 +11,7 @@ import com.example.stock.Service.Facade.ClientService;
 import com.example.stock.Service.Facade.UserService;
 import com.example.stock.Service.Facade.VoyageClientService;
 import com.example.stock.Service.Facade.VoyageService;
+import com.example.stock.Tools.Tools;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,8 +46,6 @@ public class CreeUnVoyageController {
 	private RadioButton rbMale;
 	@FXML
 	private RadioButton rbFemale;
-	@FXML
-	private TextField IdClient;
 	@FXML
 	private Button save;
 	@FXML
@@ -116,8 +115,7 @@ public class CreeUnVoyageController {
 	}
 
 	public void save() {
-		IdC = Long.parseLong(IdClient.getText());
-		voyageClient.setId(IdC);
+		voyageClient.setId(Tools.generateRandomIntIntRange(1, 200));
 		voyageClient.setNom(nomClient.getText());
 		voyageClient.setPrenom(prenomClient.getText());
 		voyageClient.setAge((int)getType());

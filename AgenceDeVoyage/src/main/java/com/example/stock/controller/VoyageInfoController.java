@@ -1,5 +1,7 @@
 package com.example.stock.controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -10,9 +12,10 @@ import com.example.stock.Bean.Voyage;
 import com.example.stock.Service.Facade.VoyageService;
 
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxControllerAndView;
@@ -43,7 +46,10 @@ public class VoyageInfoController {
 	private Label nomDeVoyage;
 	@FXML
 	private Button confirmer;
-
+	
+	@FXML
+	private ImageView imagedevoyage;
+	
 	@FXML
 	public void initialize() {
 
@@ -53,8 +59,10 @@ public class VoyageInfoController {
 //		stage.show();
 	}
 
-	public void afficherInfo(Voyage voyage) {
+	public void afficherInfo(Voyage voyage)  {
 	//	Voyage voyage = voyageService.findByDestination(destination);
+		String prix = voyage.getPrix().toString() ;
+		this.agenceDeVols.setText(prix);
 		this.description.setText(voyage.getDescription());
 		this.destination.setText(voyage.getDestination());
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
@@ -63,8 +71,8 @@ public class VoyageInfoController {
 		String nbrdejour = new Long(DateUtil.calculerLeNombreDeJours(voyage.getDeteDebut(), voyage.getDetefin()))
 				.toString();
 		this.nombreDeJours.setText(nbrdejour);
-		this.nomDeVoyage.setText(voyage.getNomVoyage());
-		show();
+		this.nomDeVoyage.setText(voyage.getHotel().getNom());
+			show();
 	}
 
 	public VoyageInfoController(FxControllerAndView<CreeUnVoyageController, AnchorPane> anotherControllerAndView,

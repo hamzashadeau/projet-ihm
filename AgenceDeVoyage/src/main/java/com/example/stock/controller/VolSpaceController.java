@@ -34,6 +34,9 @@ public class VolSpaceController {
 	@FXML
 	private Button confirmation;
 	
+	@FXML
+	private Button retour;
+	
 
 	@FXML
 	private BorderPane borderpane;
@@ -62,29 +65,31 @@ public class VolSpaceController {
 		borderpane.setRight(null);
 		borderpane.setBottom(null);
 		borderpane.setTop(null);
-		
+		retour.setOnAction(actionevent ->{
+			stage.close();
+		});
 		listevoyage.setOnAction(
 				actionevent -> {
 				//	borderpane.setCenter(Tools.loadPage(fxWeaver, VoyageListController.class, AnchorPane.class));
 					FxControllerAndView<volListController, AnchorPane> add_team = fxWeaver.load(volListController.class);
 					add_team.getController().afficherListe(destination);
 				    borderpane.setCenter(add_team.getView().get());
-				    listevoyage.setStyle("-fx-background-color:red");
+				    listevoyage.setStyle("-fx-background-color:#6BD320");
 					voyageinfo.setOnAction(
 							actionevent2 -> {
 								Vol vol = add_team.getController().getselectedItem();
 								FxControllerAndView<VolInfoController, AnchorPane> add_team1 = fxWeaver.load(VolInfoController.class);
 								add_team1.getController().afficherInfo(vol);
 							    borderpane.setCenter(add_team1.getView().get());
-							    voyageinfo.setStyle("-fx-background-color:red");
+							    voyageinfo.setStyle("-fx-background-color:#6BD320");
 						//		borderpane.setCenter(Tools.loadPage(fxWeaver, VoyageInfoController.class, AnchorPane.class));
 
 								confirmation.setOnAction(
 										actionevent1 -> {
 											FxControllerAndView<CreeUnVolController, AnchorPane> add_team2 = fxWeaver.load(CreeUnVolController.class);
-											add_team2.getController().sauvgarderClient(vol.getId(),vol.getDestination(),add_team1.getController().getPrix());
+											add_team2.getController().sauvgarderClient(vol,add_team1.getController().getPrix());
 										    borderpane.setCenter(add_team2.getView().get());
-										    confirmation.setStyle("-fx-background-color:red");
+										    confirmation.setStyle("-fx-background-color:#6BD320");
 									//		borderpane.setCenter(Tools.loadPage(fxWeaver, CreeUnVoyageController.class, AnchorPane.class));
 										    
 										    compte.setOnAction(
@@ -93,7 +98,7 @@ public class VolSpaceController {
 														FxControllerAndView<VolSuccessController, AnchorPane> add_team4 = fxWeaver.load(VolSuccessController.class);
 														//add_team4.getController().afficherListe(loginController.user);;
 													    borderpane.setCenter(add_team4.getView().get());
-													    compte.setStyle("-fx-background-color:red");
+													    compte.setStyle("-fx-background-color:#6BD320");
 													//	borderpane.setCenter(Tools.loadPage(fxWeaver, UserHistoriqueController.class, AnchorPane.class));
 
 											});

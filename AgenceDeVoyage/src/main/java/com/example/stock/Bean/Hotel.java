@@ -42,6 +42,8 @@ public class Hotel {
 		return "Hotel [id=" + id + ", nom=" + nom + ", description=" + description + "]";
 	}
 
+	
+
 	public Hotel(Long id, String nom, String description) {
 		super();
 		this.id = id;

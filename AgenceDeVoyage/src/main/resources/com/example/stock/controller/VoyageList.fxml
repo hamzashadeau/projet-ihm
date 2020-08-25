@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="voyageliste" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.VoyageListController">
+<AnchorPane fx:id="voyageliste" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.VoyageListController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="697.0" layoutX="-3.0" opacity="0.61" pickOnBounds="true">
+      <ImageView fitHeight="446.0" fitWidth="733.0" layoutX="-3.0" opacity="0.7" pickOnBounds="true">
          <image>
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <TableView fx:id="voyagetable" layoutX="13.0" layoutY="138.0" opacity="0.7" prefHeight="249.0" prefWidth="680.0">
+      <TableView fx:id="voyagetable" layoutY="125.0" opacity="0.7" prefHeight="318.0" prefWidth="728.0">
         <columns>
           <TableColumn fx:id="colVoyageId" prefWidth="67.0" text="id" />
           <TableColumn fx:id="coldestination" prefWidth="115.0" text="destination" />
@@ -24,11 +24,11 @@
             <TableColumn fx:id="colprix" prefWidth="247.0" text="prix" />
         </columns>
       </TableView>
-      <Label layoutX="218.0" layoutY="51.0" text="liste de voyage dispnible">
+      <Label layoutX="98.0" layoutY="14.0" text="liste de voyage dispnible" textFill="#e48e0e">
          <font>
-            <Font name="Century" size="24.0" />
+            <Font name="Century" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="101.0" text="selectioner le voyage convenable" />
+      <Label layoutX="37.0" layoutY="95.0" text="selectioner le voyage convenable" textFill="#030540" />
    </children>
 </AnchorPane>

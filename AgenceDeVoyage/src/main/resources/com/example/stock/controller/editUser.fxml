@@ -17,17 +17,17 @@
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <Label layoutX="179.0" prefHeight="25.0" prefWidth="245.0" text="            edit">
+      <Label layoutX="179.0" prefHeight="25.0" prefWidth="245.0" text="            edit" textFill="#ee9b15">
          <font>
-            <Font name="Bodoni MT Poster Compressed" size="39.0" />
+            <Font name="Bodoni MT Poster Compressed" size="48.0" />
          </font>
       </Label>
       <TextField fx:id="firstName" layoutX="17.0" layoutY="105.0" opacity="0.5" prefHeight="27.0" prefWidth="197.0" promptText="first name" style="-fx-border-color: blue;" />
       <TextField fx:id="lastName" layoutX="322.0" layoutY="104.0" opacity="0.5" prefHeight="27.0" prefWidth="204.0" promptText="last name" style="-fx-border-color: blue;" />
       <TextField fx:id="email" layoutX="17.0" layoutY="145.0" opacity="0.5" prefHeight="27.0" prefWidth="197.0" promptText="email" style="-fx-border-color: blue;" />
-      <Button fx:id="save" layoutX="126.0" layoutY="315.0" mnemonicParsing="false" opacity="0.78" prefHeight="41.0" prefWidth="317.0" style="-fx-background-color: red;" text="save" textFill="#f5c4c4" />
+      <Button fx:id="save" layoutX="126.0" layoutY="315.0" mnemonicParsing="false" opacity="0.78" prefHeight="41.0" prefWidth="317.0" style="-fx-background-color: #0E314C; -fx-font-size: 25px;" text="save" textFill="#f5c4c4" />
       <TextField fx:id="IdUser" layoutX="166.0" layoutY="65.0" opacity="0.5" prefHeight="27.0" prefWidth="292.0" promptText="id User" style="-fx-border-color: blue;" />
-      <ComboBox fx:id="ages" layoutX="162.0" layoutY="181.0" prefHeight="25.0" prefWidth="245.0" promptText="choisir l'age" />
+      <ComboBox fx:id="ages" layoutX="162.0" layoutY="181.0" prefHeight="25.0" prefWidth="245.0" promptText="choisir l'age" style="-fx-background-color: #1BF1F8;" />
       <RadioButton fx:id="rbMale" layoutX="190.0" layoutY="218.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="87.0" text="male" />
       <RadioButton fx:id="rbFemale" layoutX="346.0" layoutY="214.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="female" />
       <Label layoutX="43.0" layoutY="220.0" text="gender :">
