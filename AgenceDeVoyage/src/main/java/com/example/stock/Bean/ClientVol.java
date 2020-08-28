@@ -1,10 +1,14 @@
 package com.example.stock.Bean;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class ClientVol {
@@ -18,6 +22,8 @@ public class ClientVol {
 	private String gender;
 	@ManyToOne
 	private Vol vol;
+	@Temporal(TemporalType.DATE)
+	private Date date;
 	
 	
 	public String getGender() {
@@ -67,9 +73,13 @@ public class ClientVol {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	public ClientVol(Long id, String nom, String prenom, String email, int age, String gender, Vol vol) {
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public ClientVol(Long id, String nom, String prenom, String email, int age, String gender, Vol vol, Date date) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -78,11 +88,15 @@ public class ClientVol {
 		this.age = age;
 		this.gender = gender;
 		this.vol = vol;
+		this.date = date;
 	}
 	@Override
 	public String toString() {
 		return "ClientVol [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", age=" + age
-				+ ", gender=" + gender + ", vol=" + vol + "]";
+				+ ", gender=" + gender + ", vol=" + vol + ", date=" + date + "]";
 	}
+	
+	
+
 	
 }

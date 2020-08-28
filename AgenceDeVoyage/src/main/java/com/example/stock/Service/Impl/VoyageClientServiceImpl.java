@@ -1,5 +1,6 @@
 package com.example.stock.Service.Impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.stock.Bean.Client;
+import com.example.stock.Bean.ClientVol;
 import com.example.stock.Bean.Voyage;
 import com.example.stock.Bean.VoyageClient;
 import com.example.stock.Service.Facade.ClientService;
@@ -49,4 +51,14 @@ public class VoyageClientServiceImpl implements VoyageClientService {
 	public void deleteById(Long id) {
 		voyageClientDao.deleteById(id);
 		}
+	@Override
+	public List<VoyageClient> findByMonth(int month) {
+		List<VoyageClient> clients = findAll();
+		List<VoyageClient> resultats = new ArrayList<VoyageClient>();
+		for (VoyageClient clientVol : clients) {
+			if((clientVol.getDate().getMonth()+1) == month)
+				resultats.add(clientVol);
+		}
+		return resultats;
+	}
 }

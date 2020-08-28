@@ -1,18 +1,14 @@
 package com.example.stock.Service.Impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.stock.Bean.Client;
 import com.example.stock.Bean.ClientVol;
-import com.example.stock.Bean.Voyage;
-import com.example.stock.Service.Facade.ClientService;
 import com.example.stock.Service.Facade.ClientVolService;
-import com.example.stock.Service.Facade.VoyageService;
-import com.example.stock.dao.ClientDao;
 import com.example.stock.dao.ClientVolDao;
 
 @Service
@@ -53,6 +49,16 @@ public class ClientVolServiceImpl implements ClientVolService {
 	public void deleteById(Long id) {
 		clientVolDao.deleteById(id);
 		}
+	@Override
+	public List<ClientVol> findByMonth(int month) {
+		List<ClientVol> clients = findAll();
+		List<ClientVol> resultats = new ArrayList<ClientVol>();
+		for (ClientVol clientVol : clients) {
+			if((clientVol.getDate().getMonth()+1) == month)
+				resultats.add(clientVol);
+		}
+		return resultats;
+	}
 
 	}
 

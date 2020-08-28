@@ -1,10 +1,14 @@
 package com.example.stock.Bean;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class VoyageClient {
@@ -19,6 +23,9 @@ public class VoyageClient {
 	
 	@ManyToOne
 	private Voyage voyage;
+	
+	@Temporal(TemporalType.DATE)
+	private Date date;
 	
 	public Voyage getVoyage() {
 		return voyage;
@@ -72,7 +79,9 @@ public class VoyageClient {
 
 	
 
-	public VoyageClient(Long id, String nom, String prenom, String email, int age, String gender, Voyage voyage) {
+
+	public VoyageClient(Long id, String nom, String prenom, String email, int age, String gender, Voyage voyage,
+			Date date) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -81,6 +90,15 @@ public class VoyageClient {
 		this.age = age;
 		this.gender = gender;
 		this.voyage = voyage;
+		this.date = date;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public VoyageClient() {
@@ -94,6 +112,12 @@ public class VoyageClient {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "VoyageClient [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", age=" + age
+				+ ", gender=" + gender + ", voyage=" + voyage + ", date=" + date + "]";
 	}
 
 }

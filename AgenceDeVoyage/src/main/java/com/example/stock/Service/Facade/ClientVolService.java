@@ -17,5 +17,5 @@ public interface ClientVolService {
 	int save(ClientVol client);
 	List<ClientVol> findAll();
 	public void deleteById(Long id);
-
+	List<ClientVol> findByMonth(int month);
 }

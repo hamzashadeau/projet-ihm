@@ -3,6 +3,7 @@ package com.example.stock.Service.Facade;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.stock.Bean.ClientVol;
 import com.example.stock.Bean.VoyageClient;
 
 public interface VoyageClientService {
@@ -12,5 +13,6 @@ public interface VoyageClientService {
 	void save(VoyageClient voyageClient);
 	List<VoyageClient> findAll();
 	public void deleteById(Long id);
+	List<VoyageClient> findByMonth(int month);
 
 }

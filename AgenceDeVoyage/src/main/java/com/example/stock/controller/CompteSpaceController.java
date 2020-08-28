@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import net.rgielen.fxweaver.core.FxControllerAndView;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 
@@ -31,6 +32,8 @@ public class CompteSpaceController {
 	
 	@FXML
 	private Button volhistorique;
+	@FXML
+	private Button statistique;
 	
 	@FXML
 	private Label moi;
@@ -39,7 +42,7 @@ public class CompteSpaceController {
 
 	@FXML
 	private BorderPane borderpane;
-	
+
 	
 //	private final FxControllerAndView<VoyageInfoController, AnchorPane> anotherControllerAndView1;
 	//private final FxControllerAndView<VoyageListController, AnchorPane> anotherControllerAndView2;
@@ -47,11 +50,11 @@ public class CompteSpaceController {
 	//private final FxControllerAndView<UserHistoriqueController, AnchorPane> anotherControllerAndView4;
 
 
+	
 	public CompteSpaceController(FxWeaver fxWeaver) {
 		super();
 		this.fxWeaver = fxWeaver;
 	}
-
 public void spacecompte (){
 	Stage stage1 = new Stage();
 	stage1.setScene(new Scene(CompteSpacee));
@@ -75,11 +78,18 @@ public void spacecompte (){
 		borderpane.setCenter(Tools.loadPage(fxWeaver, UserHistoriqueVolController.class, AnchorPane.class));
 
 	});
+	statistique.setOnAction(
+			actionevent ->{
+		borderpane.setCenter(Tools.loadPage(fxWeaver, AcceuilStatistiqueController.class, AnchorPane.class));
+		//		anotherControllerAndView1.getController().acceuill();
+
+	});
 	logout.setOnAction(actionevent ->{
 		stage1.close();
 		loginController.user = null;
 	});
 }
+
 	@FXML
 	public void initialize() {
 
