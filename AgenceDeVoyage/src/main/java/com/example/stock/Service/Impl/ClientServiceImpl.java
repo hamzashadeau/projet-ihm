@@ -49,5 +49,10 @@ public class ClientServiceImpl implements ClientService {
 clientDao.save(client);
 		return 1;
 	}
+
+	@Override
+	public Client findByCodeClient(String codeClient) {
+		return clientDao.findByCodeClient(codeClient);
+	}
 	}
 

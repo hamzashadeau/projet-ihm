@@ -1,5 +1,6 @@
 package com.example.stock.Service.Impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +34,26 @@ volDao.deleteById(id);
 	@Override
 	public Vol findByDestinationAndId(String destination, Long id) {
 		return volDao.findByDestinationAndId(destination, id);
+	}
+
+	@Override
+	public List<Vol> findAll() {
+		return volDao.findAll();
+	}
+
+	@Override
+	public void save(Vol vol) {
+		this.volDao.save(vol);		
+	}
+
+	@Override
+	public List<Vol> findByDateDebut(Date dateDebut) {
+		return volDao.findByDateDebut(dateDebut);
+	}
+
+	@Override
+	public List<Vol> findByPrix(Double prix) {
+		return volDao.findByPrix(prix);
 	}
 
 

@@ -1,5 +1,7 @@
 package com.example.stock.Service.Facade;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,5 +16,7 @@ public interface VoyageClientService {
 	List<VoyageClient> findAll();
 	public void deleteById(Long id);
 	List<VoyageClient> findByMonth(int month);
-
+	List<VoyageClient> findByCodeClient(String codeClient);
+	List<VoyageClient> findByNomVoyage(String nomVoyage);
+	List<VoyageClient> findByDate(LocalDate date);
 }

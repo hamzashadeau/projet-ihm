@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="uservolList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.UserHistoriqueVolController">
+<AnchorPane fx:id="uservolList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.UserHistoriqueVolController">
    <children>
-      <ImageView fitHeight="423.0" fitWidth="557.0" layoutX="-3.0" opacity="0.7" pickOnBounds="true">
+      <ImageView fitHeight="489.0" fitWidth="765.0" layoutX="-3.0" opacity="0.7" pickOnBounds="true">
          <image>
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <TableView fx:id="volTable" fixedCellSize="0.0" layoutX="4.0" layoutY="99.0" opacity="0.74" prefHeight="203.0" prefWidth="543.0">
+      <TableView fx:id="volTable" fixedCellSize="0.0" layoutX="29.0" layoutY="99.0" opacity="0.74" prefHeight="203.0" prefWidth="684.0">
         <columns>
-          <TableColumn fx:id="colVolId" prefWidth="67.0" text="id" />
-          <TableColumn fx:id="coldestination" prefWidth="87.0" text="destination" />
-            <TableColumn fx:id="coldeteDebut" prefWidth="128.0" text="date de debut" />
-            <TableColumn fx:id="coldeteDeretour" prefWidth="89.0" text="dae de fin" />
-            <TableColumn fx:id="colprix" prefWidth="67.0" text="prix" />
-            <TableColumn fx:id="colVoletat" prefWidth="102.0" text="etat" />
+          <TableColumn fx:id="colVolId" prefWidth="168.0" text="id" />
+          <TableColumn fx:id="colCodeClient" prefWidth="233.0" text="Code Client" />
+            <TableColumn fx:id="coldate" prefWidth="160.0" text="date" />
+            <TableColumn fx:id="colVol" prefWidth="120.0" text="Vol" />
         </columns>
       </TableView>
-      <Label layoutX="156.0" layoutY="30.0" prefHeight="17.0" prefWidth="287.0" text="vol historique" textFill="#e48716">
+      <Label layoutX="224.0" layoutY="32.0" prefHeight="17.0" prefWidth="287.0" text="vol historique" textFill="#e48716">
          <font>
             <Font name="Century" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="Allvoyage" layoutX="-3.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="find All vol" textFill="#f5f0f0" />
-      <Button fx:id="delete" layoutX="243.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: #63122A; -fx-font-size: 16px;" text="delete" textFill="#f5f2f2" />
-      <Button fx:id="deleteAll" layoutX="412.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #CD2433; -fx-font-size: 16px;" text="delete All" textFill="#f8f5f5" />
+      <Button fx:id="Allvoyage" layoutX="-3.0" layoutY="339.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="287.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="find All vol" textFill="#f5f0f0" />
+      <Button fx:id="delete" layoutX="371.0" layoutY="339.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="157.0" style="-fx-background-color: #63122A; -fx-font-size: 16px;" text="delete" textFill="#f5f2f2" />
+      <Button fx:id="deleteAll" layoutX="576.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #CD2433; -fx-font-size: 16px;" text="delete All" textFill="#f8f5f5" />
+      <TextField fx:id="motif" layoutX="26.0" layoutY="442.0" promptText="motif de recherche" />
+      <CheckBox fx:id="codeClient" layoutX="194.0" layoutY="446.0" mnemonicParsing="false" text="code Client" />
+      <Button fx:id="chercher" layoutX="435.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: orange;" text="Chercher" />
+      <CheckBox fx:id="Vol" layoutX="275.0" layoutY="446.0" mnemonicParsing="false" text="prix" />
+      <DatePicker fx:id="dateDebut" layoutX="580.0" layoutY="442.0" prefHeight="25.0" prefWidth="149.0" promptText="date De Debut" />
+      <CheckBox fx:id="date" layoutX="322.0" layoutY="446.0" mnemonicParsing="false" text="date De debut" />
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package com.example.stock.Service.Facade;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,4 +11,8 @@ public interface VolService {
 	void deleteById(Long id);
 	Optional<Vol> findById(Long id);
 	Vol findByDestinationAndId(String destination , Long id);
+	List<Vol> findAll();
+	void save(Vol vol);
+	List<Vol> findByDateDebut(Date dateDebut);
+	List<Vol> findByPrix(Double prix);
 }

@@ -5,37 +5,27 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="acceuil" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.Acceuil">
+<AnchorPane fx:id="acceuil" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.Acceuil">
    <children>
-      <ImageView fitHeight="485.0" fitWidth="733.0" layoutX="-1.0" layoutY="-1.0" opacity="0.28" pickOnBounds="true">
+      <ImageView fitHeight="585.0" fitWidth="932.0" layoutX="-1.0" layoutY="-1.0" opacity="0.28" pickOnBounds="true">
          <image>
             <Image url="@../../../image/agence-voyage.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="58.0" fitWidth="141.0" layoutX="332.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="58.0" fitWidth="138.0" layoutX="20.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../image/unnamed.png" />
          </image>
       </ImageView>
-      <BorderPane fx:id="border" cacheShape="false" centerShape="false" layoutY="47.0" prefHeight="438.0" prefWidth="732.0" scaleShape="false">
-         <center>
-            <Label prefHeight="43.0" prefWidth="550.0" text="welcome to the voyages tours" textFill="#0a0f49" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="36.0" />
-               </font>
-            </Label>
-         </center>
-      </BorderPane>
-      <Pane layoutY="7.0" prefHeight="38.0" prefWidth="732.0">
-         <children>
-            <Button fx:id="login" layoutX="382.0" layoutY="-12.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="166.0" style="-fx-background-color: #030540;" text="Login" textFill="#f2eeee" />
-            <Button fx:id="espace" layoutY="-12.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="382.0" style="-fx-background-color: #030540;" text="chercher Un Voyage / Vol" textFill="#fcf8f8" />
-            <Button fx:id="logup" layoutX="548.0" layoutY="-12.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="184.0" style="-fx-background-color: #030540;" text="Log Up" textFill="#f8f6f6" />
-         </children>
-      </Pane>
+      <Pane layoutY="7.0" prefHeight="38.0" prefWidth="732.0" />
+      <Label fx:id="label" layoutX="162.0" layoutY="236.0" prefHeight="78.0" prefWidth="675.0" text="welcome to the voyages tours" textFill="#0a0f49">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="login" layoutX="253.0" layoutY="353.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="345.0" style="-fx-background-color: #C46716;" text="acceder a l'application" textFill="#f2eeee" />
    </children>
 </AnchorPane>

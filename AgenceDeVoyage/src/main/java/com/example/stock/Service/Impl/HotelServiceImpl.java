@@ -20,7 +20,7 @@ public class HotelServiceImpl implements HotelService {
 	private HotelDao hotelDao;
 
 	@Override
-	public Hotel findByNom(String nom) {
+	public List<Hotel> findByNom(String nom) {
 		return hotelDao.findByNom(nom);
 	}
 

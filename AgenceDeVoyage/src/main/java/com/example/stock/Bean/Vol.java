@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,6 +25,8 @@ public class Vol {
 	@Temporal(TemporalType.DATE)
 	@JsonFormat(shape = Shape.STRING,pattern = "dd/MM/yyyy")
 	private Date dateDeRetour;
+	@ManyToOne
+	private VolCompany volCompany;
 	private double prix;
 	private String etat;
 	public Long getId() {
@@ -64,19 +67,33 @@ public class Vol {
 		this.etat = etat;
 	}
 	
-	public Vol(Long id, String destination, Date dateDebut, Date dateDeRetour, double prix, String etat) {
+	public Vol() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public VolCompany getVolCompany() {
+		return volCompany;
+	}
+	public void setVolCompany(VolCompany volCompany) {
+		this.volCompany = volCompany;
+	}
+	public Vol(Long id, String destination, Date dateDebut, Date dateDeRetour, VolCompany volCompany, double prix,
+			String etat) {
 		super();
 		this.id = id;
 		this.destination = destination;
 		this.dateDebut = dateDebut;
 		this.dateDeRetour = dateDeRetour;
+		this.volCompany = volCompany;
 		this.prix = prix;
 		this.etat = etat;
 	}
-	public Vol() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "Vol [id=" + id + ", destination=" + destination + ", dateDebut=" + dateDebut + ", dateDeRetour="
+				+ dateDeRetour + ", volCompany=" + volCompany + ", prix=" + prix + ", etat=" + etat + "]";
 	}
+	
 	
 	
 

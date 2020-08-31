@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.example.stock.Bean.VolCompany;
 
 public interface VolCompanyService {
-	VolCompany findByNom(String nom);
+	List<VolCompany> findByNom(String nom);
 	void save(VolCompany volCompany);
 	List<VolCompany> findAll();
     void deleteById(Long id);

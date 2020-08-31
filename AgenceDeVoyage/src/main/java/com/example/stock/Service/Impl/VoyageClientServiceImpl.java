@@ -1,6 +1,10 @@
 package com.example.stock.Service.Impl;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,4 +65,47 @@ public class VoyageClientServiceImpl implements VoyageClientService {
 		}
 		return resultats;
 	}
+
+	@Override
+	public List<VoyageClient> findByCodeClient(String codeClient) {
+		List<VoyageClient> clients = findAll();
+		List<VoyageClient> resulatats = new ArrayList<VoyageClient>();
+		for (VoyageClient voyageClient : clients) {
+			if(voyageClient.getCodeClient()!= null && voyageClient.getCodeClient().equals(codeClient))
+				resulatats.add(voyageClient);
+		}
+		return resulatats;
+	}
+
+	@Override
+	public List<VoyageClient> findByNomVoyage(String nomVoyage) {
+		List<VoyageClient> clients = findAll();
+		List<VoyageClient> resulatats = new ArrayList<VoyageClient>();
+		for (VoyageClient voyageClient : clients) {
+			if(voyageClient.getNomVoyage()!= null &&voyageClient.getNomVoyage().equals(nomVoyage))
+				resulatats.add(voyageClient);
+		}
+		return resulatats;
+	}
+	public LocalDate convertToLocalDateViaMilisecond(Date dateToConvert) {
+	    return Instant.ofEpochMilli(dateToConvert.getTime())
+	      .atZone(ZoneId.systemDefault())
+	      .toLocalDate();
+	}
+	@Override
+	public List<VoyageClient> findByDate(LocalDate date) {
+		List<VoyageClient> clients = findAll();
+		List<VoyageClient> resulatats = new ArrayList<VoyageClient>();
+		for (VoyageClient voyageClient : clients) {
+			if(voyageClient.getDate()!= null) {
+				System.out.println(date);
+				System.out.println(convertToLocalDateViaMilisecond(voyageClient.getDate()));
+					if(convertToLocalDateViaMilisecond(voyageClient.getDate()).equals(date))
+							resulatats.add(voyageClient);
+			}
+			System.out.println(resulatats);
+		}
+		return resulatats;
+	}
+//		System.out.println(date);
 }

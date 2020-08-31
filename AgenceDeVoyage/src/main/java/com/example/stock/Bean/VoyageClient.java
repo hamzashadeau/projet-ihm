@@ -20,9 +20,11 @@ public class VoyageClient {
 	private String email;
 	private int age;
 	private String gender;
-	
+	private String telephone;
+	private String codeClient;
 	@ManyToOne
 	private Voyage voyage;
+	private String nomVoyage;
 	
 	@Temporal(TemporalType.DATE)
 	private Date date;
@@ -34,8 +36,6 @@ public class VoyageClient {
 	public void setVoyage(Voyage voyage) {
 		this.voyage = voyage;
 	}
-
-
 
 	public String getNom() {
 		return nom;
@@ -77,22 +77,6 @@ public class VoyageClient {
 		this.gender = gender;
 	}
 
-	
-
-
-	public VoyageClient(Long id, String nom, String prenom, String email, int age, String gender, Voyage voyage,
-			Date date) {
-		super();
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.email = email;
-		this.age = age;
-		this.gender = gender;
-		this.voyage = voyage;
-		this.date = date;
-	}
-
 	public Date getDate() {
 		return date;
 	}
@@ -114,10 +98,56 @@ public class VoyageClient {
 		this.id = id;
 	}
 
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public String getCodeClient() {
+		return codeClient;
+	}
+
+	public void setCodeClient(String codeClient) {
+		this.codeClient = codeClient;
+	}
+
+	public String getNomVoyage() {
+		return nomVoyage;
+	}
+
+	public void setNomVoyage(String nomVoyage) {
+		this.nomVoyage = nomVoyage;
+	}
+
+	public VoyageClient(Long id, String nom, String prenom, String email, int age, String gender, String telephone,
+			String codeClient, Voyage voyage, String nomVoyage, Date date) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.age = age;
+		this.gender = gender;
+		this.telephone = telephone;
+		this.codeClient = codeClient;
+		this.voyage = voyage;
+		this.nomVoyage = nomVoyage;
+		this.date = date;
+	}
+
 	@Override
 	public String toString() {
 		return "VoyageClient [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", age=" + age
-				+ ", gender=" + gender + ", voyage=" + voyage + ", date=" + date + "]";
+				+ ", gender=" + gender + ", telephone=" + telephone + ", codeClient=" + codeClient + ", voyage="
+				+ voyage + ", nomVoyage=" + nomVoyage + ", date=" + date + "]";
 	}
+
+
+
+	
+	
 
 }

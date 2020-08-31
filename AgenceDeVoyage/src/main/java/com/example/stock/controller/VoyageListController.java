@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.example.stock.Bean.Client;
 import com.example.stock.Bean.Voyage;
 import com.example.stock.Service.Facade.VoyageService;
+import com.example.stock.config.PrimaryStageInitializer;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -47,6 +48,8 @@ public class VoyageListController {
 	private TableColumn<Voyage, String> coldestination;
 	@FXML
 	private Button choisir;
+	@FXML
+	private Button next;
 	
 //	@FXML
 	// private TableColumn<Voyage, String> colNomVol;
@@ -62,6 +65,7 @@ public class VoyageListController {
 
 	@FXML
 	public void initialize() {
+		
 	}
 
 	public void show() {
@@ -82,7 +86,6 @@ Voyage  getselectedItem() {
 		setColumnProperties();
 		List<Voyage> liste = voyageService.findByDestination(destination);
 		for (Voyage voyage : liste) {
-			System.out.println(voyage);
 			voyageList.add(voyage);
 		}
 		voyagetable.setItems(voyageList);

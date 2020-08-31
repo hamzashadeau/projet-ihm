@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.example.stock.Bean.Hotel;
 
 public interface HotelService {
-	Hotel findByNom(String nom);
+	List<Hotel> findByNom(String nom);
 	void save(Hotel hotel);
 	List<Hotel> findAll();
     void deleteById(Long id);

@@ -3,6 +3,7 @@ package com.example.stock.controller;
 import org.springframework.stereotype.Component;
 
 import com.example.stock.Bean.Vol;
+import com.example.stock.config.PrimaryStageInitializer;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -55,24 +56,15 @@ public class VolSpaceController {
 
 
 	@FXML
-	public void initialize() {}
-	
-	public void reserver(String destination) {
-		Stage stage = new Stage();
-		stage.setScene(new Scene(volSpace));
-		stage.show();
-		borderpane.setLeft(null);
-		borderpane.setRight(null);
-		borderpane.setBottom(null);
-		borderpane.setTop(null);
+	public void initialize() {
 		retour.setOnAction(actionevent ->{
-			stage.close();
+			Scene scene = new Scene(fxWeaver.loadView(PageChoixConntroller.class));
+		       PrimaryStageInitializer.stage.setScene(scene);
+		       PrimaryStageInitializer.stage.show();
 		});
-		listevoyage.setOnAction(
-				actionevent -> {
 				//	borderpane.setCenter(Tools.loadPage(fxWeaver, VoyageListController.class, AnchorPane.class));
 					FxControllerAndView<volListController, AnchorPane> add_team = fxWeaver.load(volListController.class);
-					add_team.getController().afficherListe(destination);
+					add_team.getController().afficherListe(lieu);
 				    borderpane.setCenter(add_team.getView().get());
 				    listevoyage.setStyle("-fx-background-color:#6BD320");
 					voyageinfo.setOnAction(
@@ -106,9 +98,14 @@ public class VolSpaceController {
 								});
 
 					});
-				});
-	
-		
+	}
+	private String lieu;
+	public void reserver(String destination) {
+	this.lieu = destination;
+		borderpane.setLeft(null);
+		borderpane.setRight(null);
+		borderpane.setBottom(null);
+		borderpane.setTop(null);	
 
 	}
 }

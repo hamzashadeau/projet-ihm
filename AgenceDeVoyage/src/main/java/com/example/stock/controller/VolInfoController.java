@@ -45,6 +45,8 @@ public class VolInfoController {
 	@FXML
 	private Label prix;
 	@FXML
+	private Label descriptionVolCompany;
+	@FXML
 	private ComboBox<String> alleretretour;
 	@FXML
 	private Button confirmer;
@@ -65,7 +67,8 @@ public class VolInfoController {
 	}
 
 	public void afficherInfo(Vol vol) {
-		idDeVol.setText(String.valueOf(vol.getId()));
+		this.descriptionVolCompany.setText(vol.getVolCompany().getNom());
+		//idDeVol.setText(String.valueOf(vol.getId()));
 		// Vol vol = volService.findByDestination(destination);
 		this.destination.setText(vol.getDestination());
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");

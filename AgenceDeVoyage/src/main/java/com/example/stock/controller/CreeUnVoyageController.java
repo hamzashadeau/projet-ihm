@@ -1,9 +1,14 @@
 package com.example.stock.controller;
 
+import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
+
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.stock.Bean.Client;
+import com.example.stock.Bean.Employe;
 import com.example.stock.Bean.User;
 import com.example.stock.Bean.Voyage;
 import com.example.stock.Bean.VoyageClient;
@@ -41,7 +46,19 @@ public class CreeUnVoyageController {
 	@FXML
 	private TextField age;
 	@FXML
+	private TextField codeClient;
+	@FXML
+	private Button generer;
+	@FXML
+	private TextField telephone;
+	@FXML
+	private Label remise;
+	@FXML
+	private Button next;
+	@FXML
 	private Label idDeVoyage;
+	@FXML
+	private Label message;
 	@FXML
 	private RadioButton rbMale;
 	@FXML
@@ -73,6 +90,33 @@ public class CreeUnVoyageController {
 			Types.add(i);
 		}
 		ages.setItems(Types);
+		generer.setOnAction(event ->{
+			 codegenerated = this.givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect();
+			codeClient.setText(codegenerated);
+		});
+		codeClient.setOnKeyPressed(event ->{
+			Client employefonded = clientService.findByCodeClient(codeClient.getText());
+			if(employefonded == null) {
+				message.setText("client introvable");
+				message.setStyle("-fxcolor:red");
+			}else {
+					nomClient.setText(client.getNom());
+					prenomClient.setText(client.getPrenom());
+					email.setText(client.getEmail());
+					ages.setValue(client.getAge());
+					if (client.getGender().equals("Male")) {
+						rbMale.setSelected(true);
+					} else {
+						rbFemale.setSelected(true);
+					}
+					telephone.setText(client.getTelephone());
+					remise.setText("vous avez bénificiez d'un remise de fidilité de 10% votre nouveau prix : " + (voyage1.getPrix()-voyage1.getPrix()*(1/10)));
+				message.setText("client est trouvé");
+				message.setStyle("-fxcolor:#11F264");
+				}
+	//	add_team4.getController().afficherListe(loginController.user);;
+	    
+	});
 	}
 
 	public String getGender() {
@@ -95,26 +139,42 @@ public class CreeUnVoyageController {
 	}
 
 	public void sauvgarderClient(Voyage voyage) {
-		User user = loginController.user;
-		if (user != null) {
-			nomClient.setText(user.getLasName());
-			prenomClient.setText(user.getFirstName());
-			email.setText(user.getLogin());
-			ages.setValue(user.getAge());
-			if (user.getGender().equals("Male")) {
-				rbMale.setSelected(true);
-			} else {
-				rbFemale.setSelected(true);
-			}
-		}
 //		User user=userService.findByLogin(email.getText());
 		 voyage1 = voyage;
-		idDeVoyage.setText(String.valueOf(voyage.getId()));
+		//idDeVoyage.setText(String.valueOf(voyage.getId()));
 
 //		show();
 	}
-
+	public String givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect() {
+	    int leftLimit = 48; // numeral '0'
+	    int rightLimit = 122; // letter 'z'
+	    int targetStringLength = 10;
+	    Random random = new Random();
+	 
+	    String generatedString = random.ints(leftLimit, rightLimit + 1)
+	      .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+	      .limit(targetStringLength)
+	      .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+	      .toString();
+	    System.out.println(generatedString);
+	    return generatedString;
+	}
+	String codegenerated = null;
 	public void save() {
+		if(this.codegenerated != null) {
+			client.setCodeClient(codeClient.getText());
+			client.setTelephone(telephone.getText());
+			client.setId(Tools.generateRandomIntIntRange(1, 200));
+			client.setNom(nomClient.getText());
+			client.setPrenom(prenomClient.getText());
+			client.setAge((int)getType());
+			client.setGender(getGender());
+			client.setEmail(email.getText());
+			clientService.save(client);
+		}
+		voyageClient.setNomVoyage(voyage1.getNomVoyage());
+		voyageClient.setCodeClient(codeClient.getText());
+		voyageClient.setTelephone(telephone.getText());
 		voyageClient.setId(Tools.generateRandomIntIntRange(1, 200));
 		voyageClient.setNom(nomClient.getText());
 		voyageClient.setPrenom(prenomClient.getText());

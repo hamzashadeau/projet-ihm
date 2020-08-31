@@ -20,11 +20,13 @@ public class ClientVol {
 	private String email;
 	private int age;
 	private String gender;
+	private String telephone;
+	private String codeClient;
 	@ManyToOne
 	private Vol vol;
 	@Temporal(TemporalType.DATE)
 	private Date date;
-	
+	private Long iDVol;
 	
 	public String getGender() {
 		return gender;
@@ -79,7 +81,26 @@ public class ClientVol {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public ClientVol(Long id, String nom, String prenom, String email, int age, String gender, Vol vol, Date date) {
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public String getCodeClient() {
+		return codeClient;
+	}
+	public void setCodeClient(String codeClient) {
+		this.codeClient = codeClient;
+	}
+	public Long getiDVol() {
+		return iDVol;
+	}
+	public void setiDVol(Long iDVol) {
+		this.iDVol = iDVol;
+	}
+	public ClientVol(Long id, String nom, String prenom, String email, int age, String gender, String telephone,
+			String codeClient, Vol vol, Date date, Long iDVol) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -87,14 +108,24 @@ public class ClientVol {
 		this.email = email;
 		this.age = age;
 		this.gender = gender;
+		this.telephone = telephone;
+		this.codeClient = codeClient;
 		this.vol = vol;
 		this.date = date;
+		this.iDVol = iDVol;
 	}
 	@Override
 	public String toString() {
 		return "ClientVol [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", age=" + age
-				+ ", gender=" + gender + ", vol=" + vol + ", date=" + date + "]";
+				+ ", gender=" + gender + ", telephone=" + telephone + ", codeClient=" + codeClient + ", vol=" + vol
+				+ ", date=" + date + ", iDVol=" + iDVol + "]";
 	}
+	
+	
+
+	
+	
+	
 	
 	
 

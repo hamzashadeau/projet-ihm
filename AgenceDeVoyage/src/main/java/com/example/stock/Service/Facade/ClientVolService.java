@@ -1,5 +1,7 @@
 package com.example.stock.Service.Facade;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,9 +15,11 @@ public interface ClientVolService {
 	ClientVol findByNom(String nom);
 	ClientVol findByPrenom(String prenom);
 	ClientVol findByEmail(String email);
-	List<ClientVol> findByVolId(Long id);
 	int save(ClientVol client);
 	List<ClientVol> findAll();
 	public void deleteById(Long id);
 	List<ClientVol> findByMonth(int month);
+	List<ClientVol> findByCodeClient(String codeClient);
+	List<ClientVol> findByVolId(Long id);
+	List<ClientVol> findByDate(LocalDate date);
 }

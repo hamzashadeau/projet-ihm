@@ -6,29 +6,23 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="volliste" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.volListController">
+<AnchorPane fx:id="volliste" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.volListController">
    <children>
-      <ImageView fitHeight="446.0" fitWidth="733.0" layoutX="-3.0" opacity="0.7" pickOnBounds="true" smooth="false">
+      <ImageView fitHeight="549.0" fitWidth="938.0" layoutX="-3.0" opacity="0.7" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <TableView fx:id="volTable" layoutY="119.0" opacity="0.7" prefHeight="322.0" prefWidth="728.0">
+      <TableView fx:id="volTable" layoutX="25.0" layoutY="123.0" opacity="0.7" prefHeight="322.0" prefWidth="884.0" style="-fx-background-color: #262626; -fx-background-radius: 15;">
         <columns>
           <TableColumn fx:id="colVolId" prefWidth="67.0" text="id" />
-          <TableColumn fx:id="coldestination" prefWidth="115.0" text="destination" />
-            <TableColumn fx:id="coldeteDebut" prefWidth="128.0" text="date de debut" />
-            <TableColumn fx:id="coldeteDeretour" prefWidth="98.0" text="date de retour" />
-            <TableColumn fx:id="colprix" prefWidth="317.0" text="prix" />
+          <TableColumn fx:id="coldestination" prefWidth="283.0" text="destination" />
+            <TableColumn fx:id="coldeteDebut" prefWidth="169.0" text="date de debut" />
+            <TableColumn fx:id="coldeteDeretour" prefWidth="160.0" text="date de retour" />
+            <TableColumn fx:id="colprix" prefWidth="203.0" text="prix" />
         </columns>
       </TableView>
-      <Label layoutX="133.0" layoutY="14.0" text="liste de vol disponible" textFill="#eb9c12">
-         <font>
-            <Font name="Century" size="48.0" />
-         </font>
-      </Label>
-      <Label layoutX="40.0" layoutY="93.0" prefHeight="17.0" prefWidth="211.0" text="selectioner le voyage convenabe:" textFill="#241a57" />
+      <Label layoutX="40.0" layoutY="93.0" prefHeight="17.0" prefWidth="211.0" text="selectioner le voyage convenabe:*" textFill="#241a57" />
    </children>
 </AnchorPane>

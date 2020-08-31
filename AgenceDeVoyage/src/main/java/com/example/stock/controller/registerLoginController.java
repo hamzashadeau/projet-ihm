@@ -1,15 +1,18 @@
 package com.example.stock.controller;
 
-import java.awt.Color;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.example.stock.Bean.Employe;
 import com.example.stock.Bean.User;
+import com.example.stock.Service.Facade.EmployeService;
 import com.example.stock.Service.Facade.UserService;
 import com.example.stock.Tools.Tools;
+import com.jayway.jsonpath.EvaluationListener.FoundResult;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,17 +34,18 @@ import net.rgielen.fxweaver.core.FxmlView;
 @FxmlView("registerUser.fxml")
 public class registerLoginController {
 	private final FxWeaver fxWeaver;
-	private Stage stage;
 	@FXML
 	private TextField firstName;
+	@FXML
+	private TextField cin;
 	@FXML
 	private TextField email;
 	@FXML
 	private TextField adress;
 	@FXML
-	private TextField motpass;
+	private TextField telephone;
 	@FXML
-	private TextField motDepassCon;
+	private TextField codeEmploye;
 	@FXML
 	private TextField age;
 	@FXML
@@ -57,9 +61,11 @@ public class registerLoginController {
 	@FXML
 	private Label eroremail;
 	@FXML
-	private Label errormdp;
+	private Label errortelephone;
 	@FXML
-	private Label errorcmdp;
+	private Label message;
+	@FXML
+	private Label errorcin;
 	@FXML
 	private RadioButton rbMale;
 	@FXML
@@ -69,15 +75,17 @@ public class registerLoginController {
 	@FXML
 	private Button save;
 	@FXML
+	private Button generer;
+	@FXML
 	private ComboBox<Integer> ages;
 	@FXML
 	private AnchorPane creeUnUser;
 	@FXML
 	private BorderPane border;
 	@Autowired
-	private UserService userService;
+	private EmployeService employeService;
 	private ObservableList<Integer> Types= FXCollections.observableArrayList();
-	private final FxControllerAndView<CompteSpaceController, AnchorPane> anotherControllerAndView2;
+//	private final FxControllerAndView<CompteSpaceController, AnchorPane> anotherControllerAndView2;
 
 	private User user = new User();
 
@@ -87,50 +95,95 @@ public class registerLoginController {
 	public void show() {
 	}
 
-	public registerLoginController(FxWeaver fxWeaver,
-			FxControllerAndView<CompteSpaceController, AnchorPane> anotherControllerAndView1) {
+	
+	public registerLoginController(FxWeaver fxWeaver) {
 		super();
 		this.fxWeaver = fxWeaver;
-		this.anotherControllerAndView2 = anotherControllerAndView1;
 	}
 	public Integer getType() {
 		return ages.getSelectionModel().getSelectedItem();
 	}
+	public String givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect() {
+	    int leftLimit = 48; // numeral '0'
+	    int rightLimit = 122; // letter 'z'
+	    int targetStringLength = 10;
+	    Random random = new Random();
+	 
+	    String generatedString = random.ints(leftLimit, rightLimit + 1)
+	      .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+	      .limit(targetStringLength)
+	      .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+	      .toString();
+	    System.out.println(generatedString);
+	    return generatedString;
+	}
+	String codegenerated = null;
+	public void start() {
+		//Stage stage = new Stage();
+		//stage.setScene(new Scene(creeUnUser));
+		//stage.show();
+	}
 	@FXML
 	public void initialize() {
-		stage = new Stage();
-		stage.setScene(new Scene(creeUnUser));
 		for (int i = 0; i < 100; i++) {
 			Types.add(i);
 		}
 	ages.setItems(Types);
-	
-	
+	generer.setOnAction(event ->{
+		 codegenerated = this.givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect();
+		codeEmploye.setText(codegenerated);
+	});
+	codeEmploye.setOnKeyPressed(event ->{
+		Employe employefonded = employeService.findByCodeEmploye(codeEmploye.getText());
+		if(employefonded == null) {
+			message.setText("employe introvable");
+			message.setStyle("-fxcolor:red");
+		}else {
+			firstName.setText(employefonded.getPrenom());
+			lastName.setText(employefonded.getNom());
+			adress.setText(employefonded.getAdress());
+			cin.setText(employefonded.getCin());
+			telephone.setText(employefonded.getTelephone());
+			ages.setValue(employefonded.getAge());
+			if (employefonded.getGender().equals("Male")) {
+				rbMale.setSelected(true);
+			} else {
+				rbFemale.setSelected(true);
+			}	
+			message.setText("employe est trouvé");
+			message.setStyle("-fxcolor:#11F264");
+			}
+	});
 	save.setOnAction(actionEvent -> { 
 		if( firstName.getText().isEmpty() &&  lastName.getText().isEmpty() && adress.getText().isEmpty() && 
-				email.getText().isEmpty() && motpass.getText().isEmpty() && motDepassCon.getText().isEmpty() && getGender().isEmpty() && getType() == null)
+				email.getText().isEmpty() && cin.getText().isEmpty() && telephone.getText().isEmpty() && getGender().isEmpty() && getType() == null)
 		{
 			errorfirstname.setText("champ vide");
 			errorlastname.setText("champ vide");
 			erroradress.setText("champ vide");
 			eroremail.setText("champ vide");
-			errormdp.setText("champ vide");
-			errorcmdp.setText("champ vide");
+			telephone.setText("champ vide");
+			cin.setText("champ vide");
 		}else if(!firstName.getText().isEmpty() &&  !lastName.getText().isEmpty() && !adress.getText().isEmpty() && !email.getText().isEmpty() && 
-				!motpass.getText().isEmpty() && !motDepassCon.getText().isEmpty() && !getGender().isEmpty() && getType() != null){
+				!telephone.getText().isEmpty() && !cin.getText().isEmpty() && !getGender().isEmpty() && getType() != null){
 			if(validate("First Name", firstName.getText(), "[a-zA-Z]+",errorfirstname) &&
 			    	   validate("Last Name",lastName.getText() , "[a-zA-Z]+",errorlastname) &&
 			    	   validate("Email", email.getText(), "[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+",eroremail)){
-				user.setId(Tools.generateRandomIntIntRange(1, 200));
-				user.setFirstName(firstName.getText());
-			user.setLasName(lastName.getText());
-			user.setAdress(adress.getText());
-			user.setAge(getType());
-			user.setLogin(email.getText());
-			user.setGender(getGender());
-			user.setMotDePass(motpass.getText());
-			userService.save(user);
-			anotherControllerAndView2.getController().initialize();
+				Employe employe = new Employe();
+				employe.setCodeEmploye(codegenerated);
+				employe.setId(Tools.generateRandomIntIntRange(1, 200));
+				employe.setPrenom(firstName.getText());
+				employe.setNom(lastName.getText());
+			employe.setAdress(adress.getText());
+			employe.setAge(getType());
+			employe.setEmail(email.getText());
+			employe.setGender(getGender());
+			employe.setTelephone(telephone.getText());
+			employe.setCin(cin.getText());
+			employeService.save(employe);
+			message.setText("employe est savgarder");
+			message.setStyle("-fxcolor:green");
+		//	anotherControllerAndView2.getController().initialize();
 			}}else {
 		if(firstName.getText().isEmpty()) {
 			errorfirstname.setText("champ vide");
@@ -144,17 +197,14 @@ public class registerLoginController {
 		if(email.getText().isEmpty()) {
 			eroremail.setText("champ vide");
 		}
-		if(motpass.getText().isEmpty()) {
-			errormdp.setText("champ vide");
+		if(cin.getText().isEmpty()) {
+			errorcin.setText("champ vide");
 		}
-		if(motDepassCon.getText().isEmpty()) {
-			errorcmdp.setText("champ vide");
-		}
-		if(!motpass.getText().equals(motDepassCon.getText())) {
-			errorcmdp.setText("champ incompatible");
+		if(telephone.getText().isEmpty()) {
+			errortelephone.setText("champ vide");
 		}
 		}
-	});
+	});		
 	}
 	private boolean validate(String field, String value, String pattern,Label label){
 			Pattern p = Pattern.compile(pattern);

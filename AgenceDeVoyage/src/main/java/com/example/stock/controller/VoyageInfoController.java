@@ -45,6 +45,18 @@ public class VoyageInfoController {
 	@FXML
 	private Label nomDeVoyage;
 	@FXML
+	private Label nomHotel;
+	@FXML
+	private Label descriptionVolCompany;
+	@FXML
+	private Label prixHotel;
+	@FXML
+	private Label prixDeNouriture;
+	@FXML
+	private Label autre;
+	@FXML
+	private Button next;
+	@FXML
 	private Button confirmer;
 	
 	@FXML
@@ -61,18 +73,23 @@ public class VoyageInfoController {
 
 	public void afficherInfo(Voyage voyage)  {
 	//	Voyage voyage = voyageService.findByDestination(destination);
-		String prix = voyage.getPrix().toString() ;
+		String prix = voyage.getPrix().toString();
 		this.agenceDeVols.setText(prix);
 		this.description.setText(voyage.getDescription());
 		this.destination.setText(voyage.getDestination());
+		this.nomHotel.setText(voyage.getHotel().getNom());
+		this.descriptionVolCompany.setText(voyage.getVolCompany().getNom());
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
 		String dateString = dateFormat.format(voyage.getDeteDebut());
 		this.dateDeDebut.setText(dateString);
 		String nbrdejour = new Long(DateUtil.calculerLeNombreDeJours(voyage.getDeteDebut(), voyage.getDetefin()))
 				.toString();
 		this.nombreDeJours.setText(nbrdejour);
-		this.nomDeVoyage.setText(voyage.getHotel().getNom());
-			show();
+		//this.nomDeVoyage.setText(voyage.getHotel().getNom());
+		this.autre.setText(voyage.getAutre().toString());
+		this.prixDeNouriture.setText(voyage.getPrixNourriture().toString());
+		this.prixHotel.setText(voyage.getPrixHotel().toString());
+		
 	}
 
 	public VoyageInfoController(FxControllerAndView<CreeUnVoyageController, AnchorPane> anotherControllerAndView,

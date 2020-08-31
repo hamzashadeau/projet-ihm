@@ -21,7 +21,7 @@ public class VolCompanyServiceImpl implements VolCompanyService {
 	}
 
 	@Override
-	public VolCompany findByNom(String nom) {
+	public List<VolCompany> findByNom(String nom) {
 		return VolCompanyDao.findByNom(nom);
 	}
 

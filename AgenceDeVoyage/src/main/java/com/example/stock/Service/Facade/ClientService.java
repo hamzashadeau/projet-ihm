@@ -13,4 +13,5 @@ public interface ClientService {
 	Client findByEmail(String email);
 //	List<Client> findByVoyageId(Long id);
 	int save(Client client);
+	Client findByCodeClient(String codeClient);
 }

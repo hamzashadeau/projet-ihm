@@ -32,9 +32,31 @@ private String Description;
 private String destination;
 private String Url;
 private Double prix;
+private Double autre;
+private Double prixNourriture;
+private Double prixHotel;
+
 private String etat;
 
 
+public Double getAutre() {
+	return autre;
+}
+public void setAutre(Double autre) {
+	this.autre = autre;
+}
+public Double getPrixNourriture() {
+	return prixNourriture;
+}
+public void setPrixNourriture(Double prixNourriture) {
+	this.prixNourriture = prixNourriture;
+}
+public Double getPrixHotel() {
+	return prixHotel;
+}
+public void setPrixHotel(Double prixHotel) {
+	this.prixHotel = prixHotel;
+}
 public String getEtat() {
 	return etat;
 }
@@ -102,17 +124,13 @@ public void setDescription(String description) {
 	Description = description;
 }
 
-
-
-@Override
-public String toString() {
-	return "Voyage [id=" + id + ", nomVoyage=" + nomVoyage + ", hotel=" + hotel + ", volCompany=" + volCompany
-			+ ", deteDebut=" + deteDebut + ", detefin=" + detefin + ", Description=" + Description + ", destination="
-			+ destination + ", Url=" + Url + ", prix=" + prix + "]";
+public Voyage() {
+	super();
+	// TODO Auto-generated constructor stub
 }
-
 public Voyage(Long id, String nomVoyage, Hotel hotel, VolCompany volCompany, Date deteDebut, Date detefin,
-		String description, String destination, String url, Double prix, String etat) {
+		String description, String destination, String url, Double prix, Double autre, Double prixNourriture,
+		Double prixHotel, String etat) {
 	super();
 	this.id = id;
 	this.nomVoyage = nomVoyage;
@@ -124,12 +142,19 @@ public Voyage(Long id, String nomVoyage, Hotel hotel, VolCompany volCompany, Dat
 	this.destination = destination;
 	Url = url;
 	this.prix = prix;
+	this.autre = autre;
+	this.prixNourriture = prixNourriture;
+	this.prixHotel = prixHotel;
 	this.etat = etat;
 }
-public Voyage() {
-	super();
-	// TODO Auto-generated constructor stub
+@Override
+public String toString() {
+	return "Voyage [id=" + id + ", nomVoyage=" + nomVoyage + ", hotel=" + hotel + ", volCompany=" + volCompany
+			+ ", deteDebut=" + deteDebut + ", detefin=" + detefin + ", Description=" + Description + ", destination="
+			+ destination + ", Url=" + Url + ", prix=" + prix + ", autre=" + autre + ", prixNourriture="
+			+ prixNourriture + ", prixHotel=" + prixHotel + ", etat=" + etat + "]";
 }
+
 
 }
 

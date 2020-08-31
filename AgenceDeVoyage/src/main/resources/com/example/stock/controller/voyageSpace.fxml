@@ -8,22 +8,22 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="voyageSpace" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.VoyageSpaceController">
+<AnchorPane fx:id="voyageSpace" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.VoyageSpaceController">
    <children>
-      <ImageView fitHeight="485.0" fitWidth="733.0" opacity="0.28" pickOnBounds="true">
+      <ImageView fitHeight="585.0" fitWidth="932.0" opacity="0.28" pickOnBounds="true">
          <image>
             <Image url="@../../../image/agence-voyage.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="listevoyage" mnemonicParsing="false" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="listevoyage" textFill="#fcf8f8" />
-      <Button fx:id="voyageinfo" layoutX="166.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="voyage info" textFill="#f2eded" />
-      <Button fx:id="confirmation" layoutX="332.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="confirmation" textFill="#f5efef" />
+      <Button fx:id="listevoyage" mnemonicParsing="false" prefHeight="39.0" prefWidth="246.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="listevoyage" textFill="#fcf8f8" />
+      <Button fx:id="voyageinfo" layoutX="246.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="214.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="voyage info" textFill="#f2eded" />
+      <Button fx:id="confirmation" layoutX="460.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="205.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="confirmation" textFill="#f5efef" />
       <ImageView fitHeight="57.0" fitWidth="200.0" layoutX="213.0" layoutY="-100.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../image/unnamed.png" />
          </image>
       </ImageView>
-      <BorderPane fx:id="borderpane" layoutY="40.0" prefHeight="446.0" prefWidth="733.0">
+      <BorderPane fx:id="borderpane" layoutY="40.0" prefHeight="549.0" prefWidth="932.0">
          <center>
             <Label text="cliquer sur listevoyage" textFill="#030540" BorderPane.alignment="CENTER">
                <font>
@@ -31,7 +31,7 @@
                </font>
             </Label>
          </center></BorderPane>
-      <Button fx:id="compte" layoutX="498.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="118.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="success" textFill="#f8f1f1" />
-      <Button fx:id="retour" layoutX="616.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="118.0" style="-fx-background-color: #D8371A;" text="retour" textFill="#f8f8f8" />
+      <Button fx:id="compte" layoutX="665.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="149.0" style="-fx-background-color: #030540; -fx-font-size: 18px;" text="success" textFill="#f8f1f1" />
+      <Button fx:id="retour" layoutX="814.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="118.0" style="-fx-background-color: #D8371A;" text="retour" textFill="#f8f8f8" />
    </children>
 </AnchorPane>

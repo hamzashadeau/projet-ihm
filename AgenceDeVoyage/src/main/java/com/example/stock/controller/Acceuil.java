@@ -3,13 +3,16 @@ package com.example.stock.controller;
 import org.springframework.stereotype.Component;
 
 import com.example.stock.Tools.Tools;
+import com.example.stock.config.PrimaryStageInitializer;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxControllerAndView;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
@@ -31,6 +34,9 @@ public class Acceuil {
 
 	@FXML
 	private  Button login;
+
+	@FXML
+	private Label label;
 	
 	@FXML
 	private  Button logup;
@@ -41,30 +47,33 @@ public class Acceuil {
 	
 	@FXML
 	public void initialize() {
-		Stage stage = new Stage();
 		//stage.setScene(new Scene(acceuil));
 		//stage.show();
-		logup.setOnAction(
+	/*	logup.setOnAction(
 				actionevent -> {
 			border.setCenter(Tools.loadPage(fxWeaver, registerLoginController.class, AnchorPane.class));
 			logup.setStyle("-fx-background-color:#C13A0A");
 			login.setStyle("-fx-background-color: #030540");
 			espace.setStyle("-fx-background-color: #030540");
-		});
+		});*/
 		login.setOnAction(
 				actionevent -> {
-			border.setCenter(Tools.loadPage(fxWeaver, loginController.class, AnchorPane.class));
-			logup.setStyle("-fx-background-color: #030540");
-			login.setStyle("-fx-background-color:#C13A0A");
-			espace.setStyle("-fx-background-color: #030540");
+					 Scene scene = new Scene(fxWeaver.loadView(loginController.class));
+				       PrimaryStageInitializer.stage.setScene(scene);
+				       PrimaryStageInitializer.stage.show();
+				//	stageManager.changeScene(label,acceuil);
+			//border.setCenter(Tools.loadPage(fxWeaver, loginController.class, AnchorPane.class));
+			//logup.setStyle("-fx-background-color: #030540");
+			//login.setStyle("-fx-background-color:#C13A0A");
+			//espace.setStyle("-fx-background-color: #030540");
 				});
-		espace.setOnAction(
+	/*	espace.setOnAction(
 				actionevent -> {
 			border.setCenter(Tools.loadPage(fxWeaver, AcceuilPrincipal.class, AnchorPane.class));
 			logup.setStyle("-fx-background-color: #030540");
 			espace.setStyle("-fx-background-color:#C13A0A");
 			login.setStyle("-fx-background-color: #030540");
-				});
+				});*/
 	}
 	
 

@@ -1,5 +1,6 @@
 package com.example.stock.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,9 +23,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -40,25 +44,32 @@ public class UserHistoriqueVolController {
 	@FXML
 	private AnchorPane uservolList;
 	@FXML
-	private TableView<Vol> volTable = new TableView<Vol>();
+	private TableView<ClientVol> volTable = new TableView<ClientVol>();
 
 	@FXML
-	private TableColumn<Vol, Long> colVolId;
+	private TableColumn<ClientVol, Long> colVolId;
 
 	@FXML
-	private TableColumn<Vol, Date> coldeteDebut;
+	private TableColumn<ClientVol, Date> coldate;
 
 	@FXML
-	private TableColumn<Vol, Date> coldeteDeretour;
+	private TableColumn<ClientVol, String> colCodeClient;
+	@FXML
+	private TableColumn<ClientVol, Long> colVol;
+
 
 	@FXML
-	private TableColumn<Vol, String> coldestination;
+	private Button chercher;
 	@FXML
-	private TableColumn<Voyage, Double> colprix;
-
+	private DatePicker dateDebut;
 	@FXML
-	private TableColumn<Vol, Long> colVoletat;
-	
+	private CheckBox vol;
+	@FXML
+	private CheckBox codeClient;
+	@FXML
+	private CheckBox date;
+	@FXML
+	private TextField motif;
 
 	@FXML
 	private Button Allvoyage;
@@ -89,10 +100,31 @@ public class UserHistoriqueVolController {
 
 	private final FxControllerAndView<AcceuilPrincipal, AnchorPane> anotherControllerAndView;
 
-	private ObservableList<Vol> volList = FXCollections.observableArrayList();
-
+	private ObservableList<ClientVol> volList = FXCollections.observableArrayList();
+List<ClientVol> vols = new ArrayList<ClientVol>();
 	@FXML
 	public void initialize() {
+		chercher.setOnAction(event ->{
+			if(codeClient.isSelected()) {
+			vols = volClientService.findByCodeClient(motif.getText());
+			}else if(vol.isSelected()) {
+				vols =volClientService.findByVolId(Long.parseLong(motif.getText()));
+				}else if(date.isSelected()) {
+					
+					//ZoneId defaultZoneId = ZoneId.systemDefault();
+					//Date date = convertToDateViaInstant(dateDebut.getValue());
+				    //SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+				    //String strDate= formatter.format(date);  
+				  
+				vols =volClientService.findByDate(dateDebut.getValue());
+				}
+			volList.clear();
+			vols.forEach(emp ->{
+				System.out.println(emp);
+			volList.add(emp);
+			});
+			volTable.setItems(volList);
+		});
 	//	stage = new Stage();
 		//stage.setScene(new Scene(userList));
 		Allvoyage.setOnAction(actionevent ->{
@@ -131,17 +163,15 @@ loadUserDetails();
 		this.fxWeaver = fxWeaver;
 		this.anotherControllerAndView = anotherControllerAndView;
 	}
-	Vol  getselectedItem() {
+	ClientVol  getselectedItem() {
 		return  volTable.getSelectionModel().getSelectedItem();
 	}
 	private void loadUserDetails(){
 		volList.clear();
 		List<ClientVol> volClients = volClientService.findAll();
 		for (ClientVol volClient : volClients) {
-			if (volClient.getEmail().equals(loginController.user.getLogin())) {
-				volList.add(volClient.getVol());
-		System.out.println(volClient.getVol());
-			}}
+				volList.add(volClient);
+			}
 		volTable.setItems(volList);
 	}
 	public void afficherListe(User user) {
@@ -156,12 +186,10 @@ loadUserDetails();
 	
 	private void setColumnProperties() {
 		colVolId.setCellValueFactory(new PropertyValueFactory<>("id"));
-		coldeteDebut.setCellValueFactory(new PropertyValueFactory<>("dateDebut"));
-		coldeteDeretour.setCellValueFactory(new PropertyValueFactory<>("dateDeRetour"));
-		coldestination.setCellValueFactory(new PropertyValueFactory<>("destination"));
-		colprix.setCellValueFactory(new PropertyValueFactory<>("prix"));
-		colVoletat.setCellValueFactory(new PropertyValueFactory<>("etat"));
-		
+		colCodeClient.setCellValueFactory(new PropertyValueFactory<>("codeClient"));
+		coldate.setCellValueFactory(new PropertyValueFactory<>("date"));
+		colVol.setCellValueFactory(new PropertyValueFactory<>("iDVol"));
+	
 	}
 
 

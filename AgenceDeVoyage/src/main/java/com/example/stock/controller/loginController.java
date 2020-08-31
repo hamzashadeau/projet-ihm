@@ -7,8 +7,10 @@ import org.springframework.stereotype.Component;
 import com.example.stock.Bean.User;
 import com.example.stock.Service.Facade.UserService;
 import com.example.stock.Service.Facade.VoyageService;
+import com.example.stock.config.PrimaryStageInitializer;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -72,7 +74,10 @@ public class loginController {
 				System.out.println(user.getMotDePass());
 				String mdp = password.getText();
 				if (user.getMotDePass().equals(mdp)) {
-					anotherControllerAndView1.getController().spacecompte();
+					Scene scene = new Scene(fxWeaver.loadView(PageChoixConntroller.class));
+				       PrimaryStageInitializer.stage.setScene(scene);
+				       PrimaryStageInitializer.stage.show();
+				//	anotherControllerAndView1.getController().spacecompte();
 					//Acceuil.border.setCenter(Tools.loadPage(fxWeaver, AcceuilPrincipal.class, AnchorPane.class));
 				}}else {
 			if(login.getText().isEmpty()) {
