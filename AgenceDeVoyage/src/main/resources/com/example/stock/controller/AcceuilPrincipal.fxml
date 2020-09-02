@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.TextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="acceuiprincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.AcceuilPrincipal">
    <children>
@@ -15,13 +14,15 @@
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <TextField fx:id="destination" layoutX="133.0" layoutY="293.0" prefHeight="37.0" prefWidth="248.0" promptText="destination" style="-fx-border-color: #2BB1E3; -fx-border-width: 3; -fx-border-radius: 25;" />
-      <Button fx:id="chercherUnvoyage" layoutX="283.0" layoutY="385.0" mnemonicParsing="false" opacity="0.7" prefHeight="44.0" prefWidth="367.0" style="-fx-background-color: #0E314C; -fx-font-size: 25px;" text="Chercher " textFill="#fcf7f7">
-         <font>
-            <Font name="Courier New" size="24.0" />
-         </font></Button>
-      <Button fx:id="retour" layoutX="825.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: orange;" text="Retour" />
-      <CheckBox fx:id="voyageOrganise" layoutX="487.0" layoutY="303.0" mnemonicParsing="false" text="voyage Organisé" />
-      <CheckBox fx:id="vol" layoutX="727.0" layoutY="303.0" mnemonicParsing="false" text="Vol" />
+      <JFXTextField fx:id="destination" layoutX="119.0" layoutY="387.0" prefHeight="25.0" prefWidth="248.0" promptText="destination" />
+      <JFXButton fx:id="chercherUnvoyage" layoutX="327.0" layoutY="490.0" prefHeight="36.0" prefWidth="279.0" style="-fx-background-color: #C6B720;" text="Chercher" />
+      <ImageView fitHeight="301.0" fitWidth="748.0" layoutX="261.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/hn0vgSOf5aB3tbJbkm1530tdjJw.gif" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="retour" layoutX="818.0" layoutY="14.0" prefHeight="25.0" prefWidth="100.0" ripplerFill="#eb0e0e" style="-fx-background-color: #F2B208;" text="Retour" />
+      <JFXCheckBox fx:id="voyageOrganise" layoutX="434.0" layoutY="403.0" text="voyage Organisé" />
+      <JFXCheckBox fx:id="vol" layoutX="634.0" layoutY="403.0" text="VOL" />
    </children>
 </AnchorPane>

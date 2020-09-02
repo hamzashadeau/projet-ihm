@@ -89,6 +89,7 @@ public class VolSpaceController {
 														add_team2.getController().save();
 														FxControllerAndView<VolSuccessController, AnchorPane> add_team4 = fxWeaver.load(VolSuccessController.class);
 														//add_team4.getController().afficherListe(loginController.user);;
+														add_team4.getController().GetNumero(add_team2.getController().getNumero());
 													    borderpane.setCenter(add_team4.getView().get());
 													    compte.setStyle("-fx-background-color:#6BD320");
 													//	borderpane.setCenter(Tools.loadPage(fxWeaver, UserHistoriqueController.class, AnchorPane.class));

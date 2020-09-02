@@ -1,15 +1,11 @@
 package com.example.stock.controller;
 
-import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
-
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.stock.Bean.Client;
-import com.example.stock.Bean.Employe;
-import com.example.stock.Bean.User;
 import com.example.stock.Bean.Voyage;
 import com.example.stock.Bean.VoyageClient;
 import com.example.stock.Service.Facade.ClientService;
@@ -17,15 +13,16 @@ import com.example.stock.Service.Facade.UserService;
 import com.example.stock.Service.Facade.VoyageClientService;
 import com.example.stock.Service.Facade.VoyageService;
 import com.example.stock.Tools.Tools;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxControllerAndView;
@@ -38,19 +35,19 @@ public class CreeUnVoyageController {
 	private final FxWeaver fxWeaver;
 	private Stage stage;
 	@FXML
-	private TextField nomClient;
+	private JFXTextField nomClient;
 	@FXML
-	private TextField prenomClient;
+	private JFXTextField prenomClient;
 	@FXML
-	private TextField email;
+	private JFXTextField email;
 	@FXML
-	private TextField age;
+	private JFXTextField age;
 	@FXML
-	private TextField codeClient;
+	private JFXTextField codeClient;
 	@FXML
-	private Button generer;
+	private JFXButton generer;
 	@FXML
-	private TextField telephone;
+	private JFXTextField telephone;
 	@FXML
 	private Label remise;
 	@FXML
@@ -60,13 +57,13 @@ public class CreeUnVoyageController {
 	@FXML
 	private Label message;
 	@FXML
-	private RadioButton rbMale;
+	private JFXCheckBox rbMale;
 	@FXML
-	private RadioButton rbFemale;
+	private JFXCheckBox rbFemale;
 	@FXML
-	private Button save;
+	private JFXButton save;
 	@FXML
-	private ComboBox<Integer> ages;
+	private JFXComboBox<Integer> ages;
 	@FXML
 	private AnchorPane creeUnvoyage;
 	@Autowired

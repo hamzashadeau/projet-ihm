@@ -10,23 +10,18 @@ import org.springframework.stereotype.Component;
 import com.example.stock.Bean.Employe;
 import com.example.stock.Bean.User;
 import com.example.stock.Service.Facade.EmployeService;
-import com.example.stock.Service.Facade.UserService;
 import com.example.stock.Tools.Tools;
-import com.jayway.jsonpath.EvaluationListener.FoundResult;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import net.rgielen.fxweaver.core.FxControllerAndView;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 
@@ -35,19 +30,19 @@ import net.rgielen.fxweaver.core.FxmlView;
 public class registerLoginController {
 	private final FxWeaver fxWeaver;
 	@FXML
-	private TextField firstName;
+	private JFXTextField firstName;
 	@FXML
-	private TextField cin;
+	private JFXTextField cin;
 	@FXML
-	private TextField email;
+	private JFXTextField email;
 	@FXML
-	private TextField adress;
+	private JFXTextField adress;
 	@FXML
-	private TextField telephone;
+	private JFXTextField telephone;
 	@FXML
-	private TextField codeEmploye;
+	private JFXTextField codeEmploye;
 	@FXML
-	private TextField age;
+	private JFXTextField age;
 	@FXML
 	private Label idDeVoyage;
 	@FXML
@@ -67,17 +62,17 @@ public class registerLoginController {
 	@FXML
 	private Label errorcin;
 	@FXML
-	private RadioButton rbMale;
+	private JFXCheckBox rbMale;
 	@FXML
-	private RadioButton rbFemale;
+	private JFXCheckBox rbFemale;
 	@FXML
-	private TextField lastName;
+	private JFXTextField lastName;
 	@FXML
-	private Button save;
+	private JFXButton save;
 	@FXML
-	private Button generer;
+	private JFXButton generer;
 	@FXML
-	private ComboBox<Integer> ages;
+	private JFXComboBox<Integer> ages;
 	@FXML
 	private AnchorPane creeUnUser;
 	@FXML

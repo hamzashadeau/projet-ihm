@@ -8,6 +8,9 @@ import com.example.stock.Bean.User;
 import com.example.stock.Service.Facade.UserService;
 import com.example.stock.Service.Facade.VoyageService;
 import com.example.stock.config.PrimaryStageInitializer;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -26,13 +29,13 @@ public class loginController {
 
 	private final FxWeaver fxWeaver;
 	@FXML
-	private TextField login;
+	private JFXTextField login;
 	@FXML
-	private PasswordField password;
+	private JFXPasswordField password;
 	@FXML
 	private AnchorPane loginpage;
 	@FXML
-	private Button connecter;
+	private JFXButton connecter;
 	@FXML
 	private Label errorlogin;
 	@FXML

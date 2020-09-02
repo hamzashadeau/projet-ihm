@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -21,11 +21,11 @@
          </image>
       </ImageView>
       <Pane layoutY="7.0" prefHeight="38.0" prefWidth="732.0" />
-      <Label fx:id="label" layoutX="162.0" layoutY="236.0" prefHeight="78.0" prefWidth="675.0" text="welcome to the voyages tours" textFill="#0a0f49">
+      <Label fx:id="label" layoutX="193.0" layoutY="203.0" prefHeight="84.0" prefWidth="544.0" stylesheets="@../../../../../Desktop/tableStyle.css" text="welcome to the voyages tours" textFill="#0a0f49">
          <font>
             <Font name="Arial Rounded MT Bold" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="login" layoutX="253.0" layoutY="353.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="345.0" style="-fx-background-color: #C46716;" text="acceder a l'application" textFill="#f2eeee" />
+      <JFXButton fx:id="login" buttonType="RAISED" layoutX="348.0" layoutY="294.0" prefHeight="58.0" prefWidth="228.0" ripplerFill="#e80b0b" style="-fx-background-color: #C46716;" text="accéder a l'application" />
    </children>
 </AnchorPane>

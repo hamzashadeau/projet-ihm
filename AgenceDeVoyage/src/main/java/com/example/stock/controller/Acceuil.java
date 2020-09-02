@@ -2,17 +2,17 @@ package com.example.stock.controller;
 
 import org.springframework.stereotype.Component;
 
-import com.example.stock.Tools.Tools;
 import com.example.stock.config.PrimaryStageInitializer;
+import com.jfoenix.controls.JFXButton;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import net.rgielen.fxweaver.core.FxControllerAndView;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
@@ -33,7 +33,7 @@ public class Acceuil {
 	private  Button espace;
 
 	@FXML
-	private  Button login;
+	private  JFXButton login;
 
 	@FXML
 	private Label label;
@@ -47,6 +47,8 @@ public class Acceuil {
 	
 	@FXML
 	public void initialize() {
+		label.setId("fancytext");
+	//	label.setFont(Font.font("Verdana", FontWeight.BOLD, 70));
 		//stage.setScene(new Scene(acceuil));
 		//stage.show();
 	/*	logup.setOnAction(

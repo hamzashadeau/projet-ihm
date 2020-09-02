@@ -8,19 +8,16 @@ import org.springframework.stereotype.Component;
 
 import com.example.stock.Bean.User;
 import com.example.stock.Service.Facade.UserService;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import net.rgielen.fxweaver.core.FxControllerAndView;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 
@@ -30,18 +27,17 @@ public class editUserController {
 
 	private final FxWeaver fxWeaver;
 //	private Stage stage;
+
 	@FXML
-	private TextField IdUser;
+	private JFXTextField firstName;
 	@FXML
-	private TextField firstName;
+	private JFXTextField email;
 	@FXML
-	private TextField email;
+	private JFXTextField adress;
 	@FXML
-	private TextField adress;
+	private JFXTextField motpass;
 	@FXML
-	private TextField motpass;
-	@FXML
-	private TextField motDepassCon;
+	private JFXTextField motDepassCon;
 	@FXML
 	private Label errorid;
 	@FXML
@@ -57,15 +53,15 @@ public class editUserController {
 	@FXML
 	private Label errorcmdp;
 	@FXML
-	private RadioButton rbMale;
+	private JFXCheckBox rbMale;
 	@FXML
-	private RadioButton rbFemale;
+	private JFXCheckBox rbFemale;
 	@FXML
-	private TextField lastName;
+	private JFXTextField lastName;
 	@FXML
-	private Button save;
+	private JFXButton save;
 	@FXML
-	private ComboBox<Integer> ages;
+	private JFXComboBox<Integer> ages;
 	@FXML
 	private AnchorPane edittUser;
 	@Autowired
@@ -97,6 +93,7 @@ private User user = new User();
 		for (int i = 0; i < 100; i++) {
 			Types.add(i);
 		}
+		ages.setItems(Types);
 		if(loginController.user != null) {
 		lastName.setText(loginController.user.getLasName());
 		firstName.setText(loginController.user.getFirstName());
@@ -112,9 +109,9 @@ private User user = new User();
 		motpass.setText(loginController.user.getMotDePass());
 		motDepassCon.setText(loginController.user.getMotDePass());
 		String idc = Long.toString(loginController.user.getId());
-		IdUser.setText(idc);
+		//IdUser.setText(idc);
 		save.setOnAction(actionEvent -> {
-			if (IdUser.getText().isEmpty() && firstName.getText().isEmpty() && lastName.getText().isEmpty()
+			if ( firstName.getText().isEmpty() && lastName.getText().isEmpty()
 					&& adress.getText().isEmpty() && email.getText().isEmpty() && motpass.getText().isEmpty()
 					&& motDepassCon.getText().isEmpty() && getGender().isEmpty() && getType() == null) {
 				errorid.setText("champ vide");
@@ -124,13 +121,13 @@ private User user = new User();
 				eroremail.setText("champ vide");
 				errormdp.setText("champ vide");
 				errorcmdp.setText("champ vide");
-			} else if (!IdUser.getText().isEmpty() && !firstName.getText().isEmpty() && !lastName.getText().isEmpty()
+			} else if ( !firstName.getText().isEmpty() && !lastName.getText().isEmpty()
 					&& !adress.getText().isEmpty() && !email.getText().isEmpty() && !motpass.getText().isEmpty()
 					&& !motDepassCon.getText().isEmpty() && !getGender().isEmpty() && getType() != null) {
 				if (validate("First Name", firstName.getText(), "[a-zA-Z]+", errorfirstname)
 						&& validate("Last Name", lastName.getText(), "[a-zA-Z]+", errorlastname) && validate("Email",
 								email.getText(), "[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+", eroremail)) {
-					user.setId(Long.parseLong(IdUser.getText()));
+				//	user.setId(Long.parseLong(IdUser.getText()));
 					user.setFirstName(firstName.getText());
 					user.setLasName(lastName.getText());
 					user.setAdress(adress.getText());
@@ -142,9 +139,7 @@ private User user = new User();
 					// anotherControllerAndView1.getController().afficherListe(user);
 				}
 			} else {
-				if (IdUser.getText().isEmpty()) {
-					errorid.setText("champ vide");
-				}
+				
 				if (firstName.getText().isEmpty()) {
 					errorfirstname.setText("champ vide");
 				}

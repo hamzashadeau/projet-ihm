@@ -17,6 +17,9 @@ import com.example.stock.Service.Facade.ClientService;
 import com.example.stock.Service.Facade.ClientVolService;
 import com.example.stock.Service.Facade.VoyageClientService;
 import com.example.stock.Service.Facade.VoyageService;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -61,15 +64,15 @@ public class UserHistoriqueVolController {
 	@FXML
 	private Button chercher;
 	@FXML
-	private DatePicker dateDebut;
+	private JFXDatePicker dateDebut;
 	@FXML
-	private CheckBox vol;
+	private JFXCheckBox vol;
 	@FXML
-	private CheckBox codeClient;
+	private JFXCheckBox codeClient;
 	@FXML
-	private CheckBox date;
+	private JFXCheckBox date;
 	@FXML
-	private TextField motif;
+	private JFXTextField motif;
 
 	@FXML
 	private Button Allvoyage;

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pageChoix" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.PageChoixConntroller">
+   <children>
+      <ImageView fitHeight="592.0" fitWidth="938.0" layoutX="-1.0" layoutY="-1.0" opacity="0.28" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/agence-voyage.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="58.0" fitWidth="178.0" layoutX="797.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/unnamed.png" />
+         </image>
+      </ImageView>
+      <Pane layoutY="7.0" prefHeight="38.0" prefWidth="732.0" />
+      <Label fx:id="label" layoutX="14.0" layoutY="35.0" prefHeight="43.0" prefWidth="240.0" text="welcome Mr " textFill="#0a0f49">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="name" layoutX="239.0" layoutY="35.0" prefHeight="43.0" prefWidth="428.0" textFill="#0a0f49">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="363.0" fitWidth="498.0" layoutX="236.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/0Ym0-yN4ARTP6d6Ih1A3P_eNXo0.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="compteUtlisateur" buttonType="RAISED" layoutX="86.0" layoutY="484.0" prefHeight="38.0" prefWidth="202.0" ripplerFill="#e80808" style="-fx-background-color: #FF5733;" text="Accéder au compte utlisateur" />
+      <JFXButton fx:id="cherche" buttonType="RAISED" layoutX="655.0" layoutY="484.0" prefHeight="38.0" prefWidth="202.0" ripplerFill="#eb1010" style="-fx-background-color: #EEB10E;" text="Chercher Un voyage Organisé/Vol" />
+   </children>
+</AnchorPane>

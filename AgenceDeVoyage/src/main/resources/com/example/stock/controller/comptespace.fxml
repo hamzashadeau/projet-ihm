@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="CompteSpacee" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.CompteSpaceController">
    <children>
@@ -24,27 +23,19 @@
       <BorderPane fx:id="borderpane" layoutX="182.0" layoutY="63.0" prefHeight="524.0" prefWidth="752.0" />
       <Pane layoutY="60.0" prefHeight="524.0" prefWidth="185.0" style="-fx-background-color: #1E424F;">
          <children>
-            <Button fx:id="edit" layoutX="-1.0" layoutY="78.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16;" text="edit compte" textFill="#f2f0ef" />
-            <Button fx:id="historique" layoutX="-1.0" layoutY="416.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text=" historique" textFill="#fcf3f3" />
-            <Button fx:id="logout" layoutY="472.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="185.0" style="-fx-background-color: #e74b24;" text="log out" />
-            <Button fx:id="statistique" layoutY="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="statistique" textFill="#f8f1f1" />
-            <Button fx:id="employe" layoutX="-1.0" layoutY="133.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16;" text=" Employe" textFill="#f2f0ef">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button fx:id="vol" layoutX="-1.0" layoutY="248.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="vols" textFill="#fcf3f3" />
-            <Button fx:id="volCompany" layoutX="-1.0" layoutY="363.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="185.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="vol Company" textFill="#fcf3f3" />
-            <Button fx:id="hotel" layoutX="-1.0" layoutY="190.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16;" text="Hotels" textFill="#f2f0ef">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button fx:id="voyage" layoutX="-1.0" layoutY="307.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="voyages" textFill="#fcf3f3" />
+            <JFXButton fx:id="statistique" buttonType="RAISED" layoutX="-1.0" layoutY="10.0" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC;" text="Statistique" />
+            <JFXButton fx:id="edit" buttonType="RAISED" layoutY="70.0" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC;" text="Edit" />
+            <JFXButton fx:id="employe" buttonType="RAISED" layoutY="128.0" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC;" text="Employe" />
+            <JFXButton fx:id="hotel" buttonType="RAISED" layoutY="186.0" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC;" text="Hotels" />
+            <JFXButton fx:id="vol" buttonType="RAISED" layoutY="246.0" prefHeight="38.0" prefWidth="185.0" style="-fx-background-color: #31ADDC;" text="Vols" />
+            <JFXButton fx:id="voyage" buttonType="RAISED" layoutY="299.0" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC;" text="Voyages" />
+            <JFXButton fx:id="volCompany" buttonType="RAISED" layoutX="-1.0" layoutY="360.0" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC;" text="Vol Company" />
+            <JFXButton fx:id="historique" buttonType="RAISED" layoutX="-1.0" layoutY="417.0" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #31ADDC;" text="Historique" />
+            <JFXButton fx:id="logout" buttonType="RAISED" layoutY="473.0" prefHeight="44.0" prefWidth="185.0" style="-fx-background-color: #e74b24;" text="Se deconnecter" />
          </children>
       </Pane>
       <Label layoutX="182.0" layoutY="15.0" prefHeight="35.0" prefWidth="150.0" style="-fx-font-size: 26px;" text="bonjour Mr" />
       <Label fx:id="moi" layoutX="322.0" layoutY="15.0" prefHeight="38.0" prefWidth="457.0" style="-fx-font-size: 26px;" />
-      <Button fx:id="accederAuCompte" layoutX="811.0" layoutY="3.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: orange;" text="retour" />
+      <JFXButton fx:id="accederAuCompte" buttonType="RAISED" layoutX="840.0" layoutY="14.0" prefHeight="32.0" prefWidth="78.0" ripplerFill="#e80909" style="-fx-background-color: orange;" text="Retour" />
    </children>
 </AnchorPane>

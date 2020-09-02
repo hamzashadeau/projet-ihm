@@ -1,5 +1,6 @@
 package com.example.stock.controller;
 
+import java.util.Date;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.stock.Bean.Client;
 import com.example.stock.Bean.ClientVol;
+import com.example.stock.Bean.FactureVol;
 import com.example.stock.Bean.User;
 import com.example.stock.Bean.Vol;
 import com.example.stock.Service.Facade.ClientService;
@@ -14,17 +16,16 @@ import com.example.stock.Service.Facade.ClientVolService;
 import com.example.stock.Service.Facade.UserService;
 import com.example.stock.Service.Facade.VolService;
 import com.example.stock.Tools.Tools;
+import com.example.stock.dao.FactureVolDao;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
@@ -36,29 +37,29 @@ public class CreeUnVolController {
 	private final FxWeaver fxWeaver;
 	private Stage stage;
 	@FXML
-	private TextField nomClient;
+	private JFXTextField nomClient;
 	@FXML
-	private TextField prenomClient;
+	private JFXTextField prenomClient;
 	@FXML
-	private TextField email;
+	private JFXTextField email;
 	@FXML
-	private TextField age;
+	private JFXTextField age;
 	@FXML
 	private Label idDeVoyage;
 	@FXML
-	private RadioButton rbMale;
+	private JFXCheckBox rbMale;
 	@FXML
-	private RadioButton rbFemale;
+	private JFXCheckBox rbFemale;
 	@FXML
-	private TextField codeClient;
+	private JFXTextField codeClient;
 	@FXML
-	private Button generer;
+	private JFXButton generer;
 	@FXML
 	private Label remise;
 	@FXML
-	private ComboBox<Integer> ages;
+	private JFXComboBox<Integer> ages;
 	@FXML
-	private Button save;
+	private JFXButton save;
 	@FXML
 	private AnchorPane creeUnvol;
 	@Autowired
@@ -66,7 +67,7 @@ public class CreeUnVolController {
 	@FXML
 	private Label message;
 	@FXML
-	private TextField telephone;
+	private JFXTextField telephone;
 	@Autowired
 	private VolService volService;
 	@Autowired
@@ -74,6 +75,8 @@ public class CreeUnVolController {
 	private ObservableList<Integer> Typess = FXCollections.observableArrayList();
 	@Autowired
 	private ClientVolService clientVolService;
+	@Autowired
+	private FactureVolDao factureVolDao;
 	private ClientVol clientVol = new ClientVol();
 	private User user = new User();
 private Vol vol1 = new Vol();
@@ -149,6 +152,15 @@ vol1 = vol;
  prixmod = new Double(prix);
 //		show();
 	}
+	
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	private String numero;
 	Client client = new Client();
 	public void save() {
 		if(this.codegenerated != null) {
@@ -161,7 +173,30 @@ vol1 = vol;
 			client.setGender(getGender());
 			client.setEmail(email.getText());
 			clientService.save(client);
-		}		clientVol.setId(Tools.generateRandomIntIntRange(1, 200));
+		}
+		FactureVol factureVol = new FactureVol();
+		factureVol.setAge(getType());
+		factureVol.setCodeClient(codeClient.getText());
+		factureVol.setDate(new Date());
+		clientVol.setDate(new Date());
+		factureVol.setDateDebut(vol1.getDateDebut());
+		factureVol.setDateDeRetour(vol1.getDateDeRetour());
+		factureVol.setDestination(vol1.getDestination());
+		factureVol.setEmail(email.getText());
+		factureVol.setGender(getGender());
+		factureVol.setEmail(email.getText());
+		factureVol.setPrix(prixmod);
+		factureVol.setNom(nomClient.getText());
+		factureVol.setPrenom(prenomClient.getText());
+		factureVol.setGender(getGender());
+		factureVol.setUserfirstName(loginController.user.getFirstName());
+		factureVol.setUserlasName(loginController.user.getLasName());
+		factureVol.setTelephone(telephone.getText());
+		this.numero = givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect();
+		factureVol.setNumeroFacture(this.numero);
+		factureVol.setId(Tools.generateRandomIntIntRange(1, 200));
+		factureVolDao.save(factureVol);
+		clientVol.setId(Tools.generateRandomIntIntRange(1, 200));
 			clientVol.setNom(nomClient.getText());
 			clientVol.setPrenom(prenomClient.getText());
 			clientVol.setiDVol(vol1.getId());

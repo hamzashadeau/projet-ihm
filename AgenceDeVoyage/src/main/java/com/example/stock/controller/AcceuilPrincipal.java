@@ -5,6 +5,9 @@ import org.springframework.stereotype.Component;
 
 import com.example.stock.Service.Facade.VoyageService;
 import com.example.stock.config.PrimaryStageInitializer;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,15 +31,15 @@ public class AcceuilPrincipal {
 	@FXML
 	private AnchorPane acceuiprincipal;
 	@FXML
-	private Button chercherUnvoyage;
+	private JFXButton chercherUnvoyage;
 	@FXML
-	private Button retour;
+	private JFXButton retour;
 	@FXML
-	private CheckBox voyageOrganise;
+	private JFXCheckBox voyageOrganise;
 	@FXML
-	private CheckBox vol;
+	private JFXCheckBox vol;
 	@FXML
-	private TextField destination;
+	private JFXTextField destination;
 	private ObservableList<String> Types = FXCollections.observableArrayList("voyage Organisé", "vol");
 	private final FxControllerAndView<VolSpaceController, AnchorPane> anotherControllerAndView2;
 	private final FxWeaver fxWeaver;

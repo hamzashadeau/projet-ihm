@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="loginpage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.loginController">
@@ -16,12 +17,6 @@
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <Button fx:id="connecter" layoutX="309.0" layoutY="381.0" mnemonicParsing="false" opacity="0.6" prefHeight="54.0" prefWidth="327.0" style="-fx-background-color: #0E314C; -fx-border-radius: 20; -fx-font-size: 25;" text="SeConnecter" textFill="#fff2f2">
-         <font>
-            <Font name="Century" size="18.0" />
-         </font></Button>
-      <TextField fx:id="login" layoutX="329.0" layoutY="210.0" maxWidth="268.0" opacity="0.7" prefHeight="42.0" prefWidth="268.0" promptText="username" style="-fx-border-color: #0E314C; -fx-border-radius: 25; -fx-border-width: 3;" />
-      <PasswordField fx:id="password" layoutX="329.0" layoutY="303.0" maxWidth="268.0" opacity="0.7" prefHeight="42.0" prefWidth="268.0" promptText="password" style="-fx-border-color: #0E314C; -fx-border-radius: 25; -fx-border-width: 3;" />
       <Label fx:id="errorlogin" layoutX="620.0" layoutY="214.0" prefHeight="35.0" prefWidth="192.0" textFill="#e40f0f" />
       <Label fx:id="errormdp" layoutX="620.0" layoutY="310.0" prefHeight="29.0" prefWidth="176.0" textFill="#dd1010" />
       <ImageView fitHeight="89.0" fitWidth="138.0" layoutX="248.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" style="visibility: tra;">
@@ -34,5 +29,13 @@
             <Font name="Britannic Bold" size="68.0" />
          </font>
       </Label>
+      <JFXTextField fx:id="login" layoutX="354.0" layoutY="237.0" prefHeight="25.0" prefWidth="249.0" promptText="Username" />
+      <JFXPasswordField fx:id="password" layoutX="358.0" layoutY="312.0" prefHeight="25.0" prefWidth="249.0" promptText="Password" />
+      <JFXButton fx:id="connecter" layoutX="393.0" layoutY="386.0" prefHeight="29.0" prefWidth="176.0" style="-fx-background-color: orange;" text="Se Connecter" />
+      <Line endX="100.0" layoutX="265.0" layoutY="134.0" startX="43.0" />
+      <Line endX="285.0" layoutX="386.0" layoutY="442.0" startX="-80.5" startY="-2.5" />
+      <Line endX="18.5" endY="0.5" layoutX="650.0" layoutY="135.0" startX="-100.0" />
+      <Line endX="176.0" endY="217.0" layoutX="130.0" layoutY="222.0" startX="176.0" startY="-89.0" />
+      <Line endX="532.0" endY="239.0" layoutX="136.0" layoutY="199.0" startX="532.0" startY="-63.0" />
    </children>
 </AnchorPane>

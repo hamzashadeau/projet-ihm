@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.stock.Tools.Tools;
 import com.example.stock.config.PrimaryStageInitializer;
+import com.jfoenix.controls.JFXButton;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -26,30 +27,30 @@ public class CompteSpaceController {
 	private AnchorPane CompteSpacee;
 
 	@FXML
-	private Button edit;
+	private JFXButton edit;
 	@FXML
-	private Button hotel;
+	private JFXButton hotel;
 	@FXML
-	private Button volCompany;
+	private JFXButton volCompany;
 	@FXML
-	private Button vol;
+	private JFXButton vol;
 	@FXML
-	private Button voyage;
+	private JFXButton voyage;
 
 	
 	@FXML
-	private Button historique;
+	private JFXButton historique;
 	@FXML
-	private Button statistique;
+	private JFXButton statistique;
 	@FXML
-	private Button accederAuCompte;
+	private JFXButton accederAuCompte;
 	
 	@FXML
 	private Label moi;
 	@FXML
-	private Button logout;
+	private JFXButton logout;
 	@FXML
-	private Button employe;
+	private JFXButton employe;
 
 
 	@FXML
@@ -98,6 +99,9 @@ public void spacecompte (){
 		logout.setOnAction(actionevent ->{
 		//	stage1.close();
 			loginController.user = null;
+			Scene scene = new Scene(fxWeaver.loadView(loginController.class));
+		       PrimaryStageInitializer.stage.setScene(scene);
+		       PrimaryStageInitializer.stage.show();
 		});
 		employe.setOnAction(event -> {
 			borderpane.setCenter(Tools.loadPage(fxWeaver, EmployesController.class, AnchorPane.class));

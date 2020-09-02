@@ -26,4 +26,5 @@ public class VoyageSuccessController {
 	public void show() {
 		
 	}
+	
 }
