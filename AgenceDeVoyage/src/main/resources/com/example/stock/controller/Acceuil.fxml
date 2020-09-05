@@ -6,11 +6,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="acceuil" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.Acceuil">
    <children>
-      <ImageView fitHeight="585.0" fitWidth="932.0" layoutX="-1.0" layoutY="-1.0" opacity="0.28" pickOnBounds="true">
+      <ImageView fitHeight="585.0" fitWidth="932.0" opacity="0.28" pickOnBounds="true">
          <image>
             <Image url="@../../../image/agence-voyage.jpg" />
          </image>
@@ -21,11 +22,20 @@
          </image>
       </ImageView>
       <Pane layoutY="7.0" prefHeight="38.0" prefWidth="732.0" />
-      <Label fx:id="label" layoutX="193.0" layoutY="203.0" prefHeight="84.0" prefWidth="544.0" stylesheets="@../../../../../Desktop/tableStyle.css" text="welcome to the voyages tours" textFill="#0a0f49">
+      <Label fx:id="label" layoutX="194.0" layoutY="92.0" prefHeight="84.0" prefWidth="544.0" stylesheets="@../../../../../Desktop/tableStyle.css" text="welcome to the voyages tours" textFill="#0a0f49">
          <font>
             <Font name="Arial Rounded MT Bold" size="36.0" />
          </font>
       </Label>
-      <JFXButton fx:id="login" buttonType="RAISED" layoutX="348.0" layoutY="294.0" prefHeight="58.0" prefWidth="228.0" ripplerFill="#e80b0b" style="-fx-background-color: #C46716;" text="accéder a l'application" />
+      <JFXButton fx:id="login" buttonType="RAISED" layoutX="315.0" layoutY="379.0" prefHeight="78.0" prefWidth="274.0" ripplerFill="#eb1818" style="-fx-background-color: #C46716;" text="accéder a l'application" textFill="#fcf7f7">
+         <font>
+            <Font name="Britannic Bold" size="18.0" />
+         </font></JFXButton>
+      <Line endX="455.0" layoutX="257.0" layoutY="158.0" startX="-65.0" />
+      <ImageView fitHeight="217.0" fitWidth="422.0" layoutX="252.0" layoutY="162.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/airbus-159588_960_720.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

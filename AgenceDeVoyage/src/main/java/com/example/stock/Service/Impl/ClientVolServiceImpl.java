@@ -52,14 +52,17 @@ public class ClientVolServiceImpl implements ClientVolService {
 		clientVolDao.deleteById(id);
 		}
 	@Override
-	public List<ClientVol> findByMonth(int month) {
+	public Double findByMonth(int month) {
+		Double som = 0.0;
 		List<ClientVol> clients = findAll();
 		List<ClientVol> resultats = new ArrayList<ClientVol>();
 		for (ClientVol clientVol : clients) {
-			if((clientVol.getDate().getMonth()+1) == month)
+			if((clientVol.getDate().getMonth()+1) == month) {
 				resultats.add(clientVol);
+				som+=clientVol.getVol().getPrix();
+			}
 		}
-		return resultats;
+		return som;
 	}
 	@Override
 	public List<ClientVol> findByCodeClient(String codeClient) {
@@ -80,8 +83,6 @@ public class ClientVolServiceImpl implements ClientVolService {
 		List<ClientVol> resulatats = new ArrayList<ClientVol>();
 		for (ClientVol voyageClient : clients) {
 			if(voyageClient.getDate()!= null) {
-				System.out.println(date);
-				System.out.println(convertToLocalDateViaMilisecond(voyageClient.getDate()));
 					if(convertToLocalDateViaMilisecond(voyageClient.getDate()).equals(date))
 							resulatats.add(voyageClient);
 			}

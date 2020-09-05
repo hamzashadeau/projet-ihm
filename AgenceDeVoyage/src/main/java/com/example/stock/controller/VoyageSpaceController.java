@@ -85,6 +85,7 @@ public class VoyageSpaceController {
 											add_team2.getController().save();
 											FxControllerAndView<VoyageSuccessController, AnchorPane> add_team4 = fxWeaver.load(VoyageSuccessController.class);
 										//	add_team4.getController().afficherListe(loginController.user);;
+											add_team4.getController().GetNumero(add_team2.getController().getNumero());
 										    borderpane.setCenter(add_team4.getView().get());
 										//	borderpane.setCenter(Tools.loadPage(fxWeaver, UserHistoriqueController.class, AnchorPane.class));
 										    compte.setStyle("-fx-background-color:#6BD320");

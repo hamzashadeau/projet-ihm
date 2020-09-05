@@ -10,6 +10,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="ListeDesVoyage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.ListesDesVoyagesController">
@@ -28,16 +29,18 @@
             <TableColumn fx:id="colprix" prefWidth="285.0" text="prix" />
         </columns>
       </TableView>
-      <Label layoutX="98.0" layoutY="14.0" text="liste de voyage dispnible" textFill="#e48e0e">
+      <Label layoutX="203.0" layoutY="14.0" text="liste de voyage dispnible" textFill="#e48e0e">
          <font>
-            <Font name="Century" size="48.0" />
+            <Font name="Britannic Bold" size="32.0" />
          </font>
       </Label>
-      <Button fx:id="chercher" layoutX="441.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: orange;" text="Chercher" />
+      <Button fx:id="chercher" layoutX="331.0" layoutY="443.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: orange;" text="Chercher" />
       <JFXTextField fx:id="motif" layoutX="17.0" layoutY="442.0" promptText="motif de recherche" />
       <JFXCheckBox fx:id="destination" layoutX="166.0" layoutY="446.0" text="Destination" />
       <JFXCheckBox fx:id="prix" layoutX="263.0" layoutY="446.0" text="Prix" />
-      <JFXCheckBox fx:id="date" layoutX="330.0" layoutY="446.0" text="date De Debut" />
+      <JFXCheckBox fx:id="date" layoutX="480.0" layoutY="446.0" text="date De Debut" />
       <JFXDatePicker fx:id="dateDebut" layoutX="592.0" layoutY="441.0" prefHeight="28.0" prefWidth="127.0" promptText="Date De Debut" />
+      <Line endX="209.0" layoutX="340.0" layoutY="48.0" startX="-137.0" />
+      <Line endX="209.0" layoutX="340.0" layoutY="56.0" startX="-137.0" />
    </children>
 </AnchorPane>

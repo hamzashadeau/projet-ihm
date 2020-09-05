@@ -5,7 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="volsuccess" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.VolSuccessController">
@@ -15,20 +15,23 @@
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <Pane layoutX="128.0" layoutY="174.0" prefHeight="130.0" prefWidth="677.0" style="-fx-border-color: #030540; -fx-border-width: 4; -fx-border-radius: 25;">
-         <children>
-            <Label layoutX="18.0" layoutY="37.0" prefHeight="56.0" prefWidth="642.0" text="votre vol est bien saisie" textFill="#030540">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="48.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="372.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="343.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../image/kisspng-pdf-computer-icons-download-pdf-5b3643b91e7405.3244798015302829371247.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="imprimer" layoutX="363.0" layoutY="348.0" prefHeight="150.0" prefWidth="132.0" />
+      <JFXButton fx:id="imprimer" layoutX="328.0" layoutY="356.0" prefHeight="150.0" prefWidth="132.0" text="Imprimer" />
+      <ImageView fitHeight="252.0" fitWidth="648.0" layoutX="87.0" layoutY="82.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/hn0vgSOf5aB3tbJbkm1530tdjJw.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="211.0" layoutY="24.0" prefHeight="56.0" prefWidth="498.0" text="Le vol est bien sauvgarder" textFill="#030540">
+         <font>
+            <Font name="Britannic Bold" size="40.0" />
+         </font>
+      </Label>
+      <Line endX="413.0" layoutX="271.0" layoutY="80.0" startX="-66.0" />
+      <Line endX="414.0" layoutX="271.0" layoutY="89.0" startX="-64.0" />
    </children>
 </AnchorPane>

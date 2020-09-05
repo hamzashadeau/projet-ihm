@@ -15,7 +15,7 @@ public interface VoyageClientService {
 	void save(VoyageClient voyageClient);
 	List<VoyageClient> findAll();
 	public void deleteById(Long id);
-	List<VoyageClient> findByMonth(int month);
+	public Double findByMonth(int month);
 	List<VoyageClient> findByCodeClient(String codeClient);
 	List<VoyageClient> findByNomVoyage(String nomVoyage);
 	List<VoyageClient> findByDate(LocalDate date);

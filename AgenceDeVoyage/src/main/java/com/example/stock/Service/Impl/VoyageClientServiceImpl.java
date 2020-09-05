@@ -56,14 +56,17 @@ public class VoyageClientServiceImpl implements VoyageClientService {
 		voyageClientDao.deleteById(id);
 		}
 	@Override
-	public List<VoyageClient> findByMonth(int month) {
+	public Double findByMonth(int month) {
+		Double som = 0.0;
 		List<VoyageClient> clients = findAll();
 		List<VoyageClient> resultats = new ArrayList<VoyageClient>();
 		for (VoyageClient clientVol : clients) {
-			if((clientVol.getDate().getMonth()+1) == month)
+			if((clientVol.getDate().getMonth()+1) == month) {
+				som+=clientVol.getVoyage().getPrix();
 				resultats.add(clientVol);
+			}
 		}
-		return resultats;
+		return som;
 	}
 
 	@Override
@@ -98,8 +101,6 @@ public class VoyageClientServiceImpl implements VoyageClientService {
 		List<VoyageClient> resulatats = new ArrayList<VoyageClient>();
 		for (VoyageClient voyageClient : clients) {
 			if(voyageClient.getDate()!= null) {
-				System.out.println(date);
-				System.out.println(convertToLocalDateViaMilisecond(voyageClient.getDate()));
 					if(convertToLocalDateViaMilisecond(voyageClient.getDate()).equals(date))
 							resulatats.add(voyageClient);
 			}

@@ -16,6 +16,11 @@
 	<field name="prenom" class="java.lang.String"/>
 	<field name="telephone" class="java.lang.String"/>
 	<field name="codeClient" class="java.lang.String"/>
+	<field name="nomVolCompany" class="java.lang.String"/>
+	<field name="nomHotel" class="java.lang.String"/>
+	<field name="autre" class="java.lang.Double"/>
+	<field name="prixNourriture" class="java.lang.Double"/>
+	<field name="prixHotel" class="java.lang.Double"/>
 	<variable name="userfirstName" class="java.lang.String"/>
 	<variable name="userlasName" class="java.lang.String"/>
 	<variable name="numeroFacture" class="java.lang.String"/>
@@ -31,7 +36,7 @@
 		<band/>
 	</background>
 	<title>
-		<band height="75">
+		<band height="88">
 			<staticText>
 				<reportElement x="0" y="10" width="140" height="30" uuid="e4918297-b1ed-413b-914c-7fb19e8d4acd"/>
 				<textElement textAlignment="Center">
@@ -91,7 +96,7 @@
 				<text><![CDATA[bonjour Mr ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="416" y="3" width="100" height="18" uuid="f7014d94-824e-4458-a94e-9fd1ba6ff23f"/>
+				<reportElement x="426" y="3" width="68" height="18" uuid="f7014d94-824e-4458-a94e-9fd1ba6ff23f"/>
 				<textFieldExpression><![CDATA[$F{numeroFacture}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -108,17 +113,17 @@
 			</textField>
 			<staticText>
 				<reportElement x="-10" y="190" width="272" height="30" uuid="f3be552a-8b9f-415f-b3e1-4567f96b3403"/>
-				<text><![CDATA[merci de choisir notre agence a votre reservation de vol: ]]></text>
+				<text><![CDATA[merci de choisir notre agence a votre reservation de voyage : ]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="35">
+		<band height="38">
 			<line>
-				<reportElement x="0" y="22" width="560" height="1" forecolor="#666666" uuid="b450e0f3-7c6b-4d8a-9115-cfdcb857bed6"/>
+				<reportElement x="0" y="20" width="556" height="3" forecolor="#666666" uuid="b450e0f3-7c6b-4d8a-9115-cfdcb857bed6"/>
 			</line>
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="13" width="196" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="007288c8-1688-4dae-a6f7-0ad9a79e9920">
+				<reportElement mode="Opaque" x="0" y="13" width="150" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="007288c8-1688-4dae-a6f7-0ad9a79e9920">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6f81d535-6c1b-48c4-8643-86c88eee3143"/>
 				</reportElement>
 				<textElement textAlignment="Center">
@@ -127,7 +132,7 @@
 				<text><![CDATA[destination]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="306" y="13" width="126" height="19" forecolor="#006699" backcolor="#E6E6E6" uuid="984f946e-54d1-4cc8-8015-19227b91c587">
+				<reportElement mode="Opaque" x="260" y="14" width="126" height="19" forecolor="#006699" backcolor="#E6E6E6" uuid="984f946e-54d1-4cc8-8015-19227b91c587">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="09ad0d49-4f69-4f88-b31e-4b2d6ddde9b7"/>
 				</reportElement>
 				<textElement textAlignment="Center">
@@ -136,7 +141,7 @@
 				<text><![CDATA[date De Retour]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="196" y="13" width="110" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ab2d5626-8cbc-4891-8f90-52e3f1457217">
+				<reportElement mode="Opaque" x="150" y="13" width="110" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ab2d5626-8cbc-4891-8f90-52e3f1457217">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd57c2da-9443-48a8-8678-839a701e80fd"/>
 				</reportElement>
 				<textElement textAlignment="Center">
@@ -145,23 +150,32 @@
 				<text><![CDATA[dateDebut]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="432" y="13" width="128" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4b38f80c-8259-4c22-9112-1c8c6436fd90">
+				<reportElement mode="Opaque" x="386" y="13" width="106" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4b38f80c-8259-4c22-9112-1c8c6436fd90">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8792511d-62d3-40ca-bf10-4412f94a6f03"/>
 				</reportElement>
 				<textElement textAlignment="Center">
 					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[prix]]></text>
+				<text><![CDATA[Vol Company]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="490" y="13" width="66" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c67af4f0-48b8-4527-a526-6dbeb37881d3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8792511d-62d3-40ca-bf10-4412f94a6f03"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hotel]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="225">
+		<band height="363">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="22" width="560" height="1" uuid="42a56369-d30c-48cd-b330-9d19db7026b4"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="22" width="556" height="1" uuid="42a56369-d30c-48cd-b330-9d19db7026b4"/>
 			</line>
 			<textField>
-				<reportElement x="0" y="2" width="196" height="20" uuid="26e8b291-044b-4aff-9aef-ef54b71e555b">
+				<reportElement x="0" y="2" width="150" height="20" uuid="26e8b291-044b-4aff-9aef-ef54b71e555b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6f81d535-6c1b-48c4-8643-86c88eee3143"/>
 				</reportElement>
 				<textElement>
@@ -170,7 +184,7 @@
 				<textFieldExpression><![CDATA[$F{destination}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="196" y="2" width="110" height="20" uuid="add5a0e7-7e69-413d-83a5-a3369eb41aab">
+				<reportElement x="150" y="2" width="110" height="20" uuid="add5a0e7-7e69-413d-83a5-a3369eb41aab">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="09ad0d49-4f69-4f88-b31e-4b2d6ddde9b7"/>
 				</reportElement>
 				<textElement>
@@ -179,7 +193,7 @@
 				<textFieldExpression><![CDATA[$F{dateDebut}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="322" y="2" width="110" height="20" uuid="fdf60d06-346d-4950-8dbf-3ece5ef98ddd">
+				<reportElement x="260" y="3" width="126" height="20" uuid="fdf60d06-346d-4950-8dbf-3ece5ef98ddd">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd57c2da-9443-48a8-8678-839a701e80fd"/>
 				</reportElement>
 				<textElement>
@@ -187,50 +201,144 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dateDeRetour}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="432" y="2" width="128" height="20" uuid="23f45bf2-2a9a-4e4e-9298-f2e89e3a12fa">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8792511d-62d3-40ca-bf10-4412f94a6f03"/>
-				</reportElement>
-				<textElement>
-					<font size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{prix}]]></textFieldExpression>
-			</textField>
 			<staticText>
-				<reportElement x="18" y="50" width="118" height="14" uuid="1777974c-36fa-4522-b386-f54004373f36"/>
+				<reportElement x="6" y="220" width="118" height="14" uuid="1777974c-36fa-4522-b386-f54004373f36"/>
 				<text><![CDATA[voila votre code de fidilité  ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="136" y="50" width="70" height="14" uuid="a3fa5fc5-83a9-4b18-9954-505d1a2fba33"/>
+				<reportElement x="124" y="220" width="70" height="14" uuid="a3fa5fc5-83a9-4b18-9954-505d1a2fba33"/>
 				<textFieldExpression><![CDATA[$F{codeClient}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="206" y="50" width="350" height="14" uuid="c7884c52-fa8d-4177-8722-a43affd1d9a5"/>
+				<reportElement x="194" y="220" width="350" height="14" uuid="c7884c52-fa8d-4177-8722-a43affd1d9a5"/>
 				<text><![CDATA[par laquel vous aurez un remise de 20% de prix de votre prochaine reservation]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="-1" y="91" width="138" height="30" uuid="df3502d8-9238-471f-8fa7-a06e9364150f"/>
+				<reportElement x="-13" y="261" width="138" height="30" uuid="df3502d8-9238-471f-8fa7-a06e9364150f"/>
 				<textElement>
 					<font fontName="Serif" size="19" isBold="true" isItalic="true"/>
 				</textElement>
 				<text><![CDATA[voyage Tours]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="-1" y="121" width="194" height="20" uuid="d4156b41-2b20-47a8-866c-030d1df7d547"/>
+				<reportElement x="-13" y="291" width="194" height="20" uuid="d4156b41-2b20-47a8-866c-030d1df7d547"/>
 				<text><![CDATA[Adresse: N85 LOT Molay smail Tmansourt]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="-1" y="141" width="84" height="20" uuid="25e45fd1-f3cf-4dba-9c44-99bc077bf50d"/>
+				<reportElement x="-13" y="311" width="84" height="20" uuid="25e45fd1-f3cf-4dba-9c44-99bc077bf50d"/>
 				<text><![CDATA[TEL: 0613430719]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="-1" y="161" width="84" height="20" uuid="dba3478b-4b33-47ea-bf93-3678357fe55d"/>
+				<reportElement x="-13" y="331" width="84" height="20" uuid="dba3478b-4b33-47ea-bf93-3678357fe55d"/>
 				<text><![CDATA[FAX: 0516252718]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="440" y="90" width="100" height="30" uuid="3570f33c-70f5-41d5-89e1-ff0b1ea73c6d"/>
+				<reportElement x="428" y="260" width="100" height="30" uuid="3570f33c-70f5-41d5-89e1-ff0b1ea73c6d"/>
 				<text><![CDATA[Signer:]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="386" y="3" width="106" height="20" uuid="0ddaf264-dfcf-4f65-a7e5-4d8fd06b716e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e111d6fd-8038-4d22-be4b-e648fd5eb0c3"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomVolCompany}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="4" width="66" height="18" uuid="0af2ad19-8249-41ce-837d-97e526b416ad">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="13af8bc0-b77d-4b9a-bc32-604aa1764768"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomHotel}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="149" y="80" width="145" height="26" uuid="4539bf38-c30a-4659-b723-7d7f387b157f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[prix de nourriture:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="106" width="144" height="26" uuid="ca10b710-a288-4b7c-bbe5-c676cb66eaa3"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[prix de hotel:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="149" y="132" width="145" height="26" uuid="c924d400-09fb-4459-be5e-1ffe9ade22bc"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Autre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="149" y="157" width="145" height="26" uuid="ae19a1c8-6a6c-4ec3-aef6-b6d0d7774b51"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="80" width="100" height="25" uuid="69c1f05b-8d23-4708-86e7-78f82c7997d2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="728787b1-e754-48b4-80b4-25168cad3f03"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prixNourriture}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="107" width="100" height="19" uuid="f48a32ab-e751-41be-a824-f65d8eebaa9b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f4d6579c-3c3f-42ad-9f7f-2f129180b1f3"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prixHotel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="133" width="100" height="25" uuid="ce2f5f91-3213-4b42-bd6b-8960f8e46dc2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="87e86fa2-8bd3-46f6-82d4-be7c23ab19a9"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{autre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="160" width="100" height="20" uuid="e412ff71-1051-4831-ac89-303c4fd9eac9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3fe68f98-fcb6-4363-9d8d-40b2eaebf171"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prix}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="140" y="80" width="270" height="1" uuid="d8ef73fc-31b4-428e-bb58-ae815079b779"/>
+			</line>
+			<line>
+				<reportElement x="410" y="81" width="1" height="109" uuid="41981cd0-f3b5-430e-a661-89bb5d6c6bcb"/>
+			</line>
+			<line>
+				<reportElement x="140" y="190" width="270" height="1" uuid="17ff9f75-71f0-4479-b46e-de3482148266"/>
+			</line>
+			<line>
+				<reportElement x="140" y="81" width="1" height="109" uuid="226aa2f8-4805-43b4-b9e5-f2f4e7d923b6"/>
+			</line>
+			<line>
+				<reportElement x="141" y="105" width="269" height="1" uuid="934f4424-9785-4529-96c8-fc722ee5ea0f"/>
+			</line>
+			<line>
+				<reportElement x="140" y="133" width="270" height="1" uuid="cea3509b-65a3-4894-a0ac-d9bb67098baf"/>
+			</line>
+			<line>
+				<reportElement x="141" y="157" width="270" height="1" uuid="f46915be-9f86-47cc-b957-16591f491658"/>
+			</line>
 		</band>
 	</detail>
 	<columnFooter>
@@ -239,7 +347,7 @@
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="157"/>
+		<band/>
 	</pageFooter>
 	<summary>
 		<band/>

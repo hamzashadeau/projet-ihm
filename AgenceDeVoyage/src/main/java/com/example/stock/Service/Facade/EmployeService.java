@@ -17,4 +17,6 @@ public interface EmployeService {
 	int save(Employe client);
 	Employe findByCodeEmploye(String codeEmploye);
 	List<Employe> findByCin(String cin);
+	List<Employe> findByGender(String gender);
+
 }

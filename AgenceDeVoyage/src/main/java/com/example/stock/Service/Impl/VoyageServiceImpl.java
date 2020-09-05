@@ -1,6 +1,9 @@
 package com.example.stock.Service.Impl;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -8,6 +11,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.stock.Bean.Vol;
 import com.example.stock.Bean.Voyage;
 import com.example.stock.Service.Facade.VoyageService;
 import com.example.stock.dao.VoyageDao;
@@ -65,5 +69,30 @@ public class VoyageServiceImpl implements VoyageService {
 		 voyageDao.deleteById(id);
 	}
 
+
+
+	@Override
+	public List<Voyage> findByPrix(Double prix) {
+		return voyageDao.findByPrix(prix);
+	}
+
+	public LocalDate convertToLocalDateViaMilisecond(Date dateToConvert) {
+	    return Instant.ofEpochMilli(dateToConvert.getTime())
+	      .atZone(ZoneId.systemDefault())
+	      .toLocalDate();
+	}
+	@Override
+	public List<Voyage> findByDateDebut(LocalDate dateDebut) {
+		List<Voyage> clients = findAll();
+		List<Voyage> resulatats = new ArrayList<Voyage>();
+		for (Voyage voyageClient : clients) {
+			if(voyageClient.getDeteDebut()!= null) {
+					if(convertToLocalDateViaMilisecond(voyageClient.getDeteDebut()).equals(dateDebut))
+							resulatats.add(voyageClient);
+			}
+		}
+		return resulatats;
+	//	return volDao.findByDateDebut(dateDebut);
+	}
 	
 }

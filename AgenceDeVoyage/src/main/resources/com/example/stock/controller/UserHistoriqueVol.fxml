@@ -10,6 +10,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="uservolList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.UserHistoriqueVolController">
@@ -27,19 +28,21 @@
             <TableColumn fx:id="colVol" prefWidth="120.0" text="Vol" />
         </columns>
       </TableView>
-      <Label layoutX="224.0" layoutY="32.0" prefHeight="17.0" prefWidth="287.0" text="vol historique" textFill="#e48716">
-         <font>
-            <Font name="Century" size="36.0" />
-         </font>
-      </Label>
       <Button fx:id="Allvoyage" layoutX="-3.0" layoutY="339.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="287.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="find All vol" textFill="#f5f0f0" />
       <Button fx:id="delete" layoutX="371.0" layoutY="339.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="157.0" style="-fx-background-color: #63122A; -fx-font-size: 16px;" text="delete" textFill="#f5f2f2" />
       <Button fx:id="deleteAll" layoutX="576.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #CD2433; -fx-font-size: 16px;" text="delete All" textFill="#f8f5f5" />
-      <Button fx:id="chercher" layoutX="444.0" layoutY="416.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: orange;" text="Chercher" />
+      <Button fx:id="chercher" layoutX="312.0" layoutY="416.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="135.0" style="-fx-background-color: orange;" text="Chercher" />
       <JFXTextField fx:id="motif1" layoutX="17.0" layoutY="415.0" promptText="motif de recherche" />
       <JFXCheckBox fx:id="codeClient" layoutX="165.0" layoutY="419.0" text="Code Client" />
       <JFXCheckBox fx:id="vol" layoutX="262.0" layoutY="419.0" text="Vol" />
-      <JFXCheckBox fx:id="date" layoutX="329.0" layoutY="419.0" text="date De Debut" />
-      <JFXDatePicker fx:id="dateDebut" layoutX="589.0" layoutY="414.0" prefHeight="28.0" prefWidth="154.0" promptText="Date De Debut" />
+      <JFXCheckBox fx:id="date" layoutX="477.0" layoutY="419.0" text="date De Debut" />
+      <JFXDatePicker fx:id="dateDebut" layoutX="590.0" layoutY="414.0" prefHeight="28.0" prefWidth="154.0" promptText="Date De Debut" />
+      <Label layoutX="227.0" layoutY="14.0" prefHeight="46.0" prefWidth="331.0" text="vol historique" textFill="#e48716">
+         <font>
+            <Font name="Britannic Bold" size="38.0" />
+         </font>
+      </Label>
+      <Line endX="157.0" layoutX="304.0" layoutY="60.0" startX="-100.0" />
+      <Line endX="156.0" layoutX="304.0" layoutY="68.0" startX="-100.0" />
    </children>
 </AnchorPane>

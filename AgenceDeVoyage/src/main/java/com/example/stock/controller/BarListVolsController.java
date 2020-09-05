@@ -53,11 +53,11 @@ public class BarListVolsController {
 	}
 	public void getstati() {
 		CategoryAxis xAxis = new CategoryAxis();
-        xAxis.setLabel("Programming Language");
+        xAxis.setLabel("Mois");
  
         NumberAxis yAxis = new NumberAxis();
           
-        yAxis.setLabel("Percent");
+        yAxis.setLabel("Somme des revenus");
  
         // Create a BarChart
          barstati = new BarChart<String, Number>(xAxis, yAxis);
@@ -65,8 +65,8 @@ public class BarListVolsController {
         // Series 1 - Data of 2014
         XYChart.Series<String, Number> dataSeries1 = new XYChart.Series<String, Number>();
         dataSeries1.setName("vol");
-        dataSeries1.getData().add(new XYChart.Data<String, Number>("mois " + (new Date().getMonth()+1),clientVolservice.findByMonth((new Date().getMonth()+1)).size()));
-        dataSeries1.getData().add(new XYChart.Data<String, Number>("mois " + (new Date().getMonth()),clientVolservice.findByMonth((new Date().getMonth())).size()));
+        dataSeries1.getData().add(new XYChart.Data<String, Number>("mois " + (new Date().getMonth()+1),clientVolservice.findByMonth((new Date().getMonth()+1))));
+        dataSeries1.getData().add(new XYChart.Data<String, Number>("mois " + (new Date().getMonth()),clientVolservice.findByMonth((new Date().getMonth()))));
 
  
         // Series 2 - Data of 2015

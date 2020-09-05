@@ -13,8 +13,11 @@ public interface VoyageService {
 	List<Voyage> findByHotelNom(String nom);
 	void save(Voyage voyage);
 	List<Voyage> findAll();
+	List<Voyage> findByPrix(Double prix);
+	public List<Voyage> findByDateDebut(LocalDate dateDebut);
 	List<Voyage> findByDestination(String destination);
     List<Voyage> findByDestinationAndDeteDebutAndDateFin(String destination,LocalDate datedebut,LocalDate datefin);	
 	void deleteById(Long id);
+	
 
 }

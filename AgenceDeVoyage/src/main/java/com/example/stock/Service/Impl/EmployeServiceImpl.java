@@ -67,5 +67,10 @@ employeDao.save(employe);
 	public List<Employe> findByCin(String cin) {
 		return employeDao.findByCin(cin);
 	}
+
+	@Override
+	public List<Employe> findByGender(String gender) {
+		return employeDao.findByGender(gender);
+	}
 	}
 

@@ -1,6 +1,9 @@
 package com.example.stock.controller;
 
+import java.awt.Desktop;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +27,7 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.util.Java14BigDecimalHandler;
 
 @Component
 @FxmlView("volSucess.fxml")
@@ -44,6 +48,7 @@ public void initialize() {
 			e.printStackTrace();
 		}
 	});
+
 //	stage = new Stage();
 	//stage.setScene(new Scene(volliste));
 }
@@ -71,7 +76,30 @@ public String exportReport(String reportFormat) throws FileNotFoundException, JR
     if (reportFormat.equalsIgnoreCase("pdf")) {
         JasperExportManager.exportReportToPdfFile(jasperPrint,"facture.pdf");
     }
+	 if (file.exists()) {
 
+         if (Desktop.isDesktopSupported()) {
+             try {
+				Desktop.getDesktop().open(file);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+         } else {
+             System.out.println("Awt Desktop is not supported!");
+         }
+
+     } else {
+         System.out.println("File is not exists!");
+     }
+	 Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+     if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+         try {
+             desktop.browse(new URI(file.getAbsolutePath()));
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+     }
     return "report generated in path : " ;
 }
 public VolSuccessController(FxWeaver fxWeaver) {

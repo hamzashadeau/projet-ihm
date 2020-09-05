@@ -1,5 +1,6 @@
 package com.example.stock.Service.Facade;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -13,6 +14,6 @@ public interface VolService {
 	Vol findByDestinationAndId(String destination , Long id);
 	List<Vol> findAll();
 	void save(Vol vol);
-	List<Vol> findByDateDebut(Date dateDebut);
+	public List<Vol> findByDateDebut(LocalDate dateDebut);
 	List<Vol> findByPrix(Double prix);
 }

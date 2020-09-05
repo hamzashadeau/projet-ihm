@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="voyageSuceess" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.VoyageSuccessController">
@@ -14,19 +15,23 @@
             <Image url="@../../../image/Capture.PNG" />
          </image>
       </ImageView>
-      <Pane layoutX="102.0" layoutY="180.0" prefHeight="136.0" prefWidth="667.0" style="-fx-border-color: #030540; -fx-border-width: 4; -fx-border-radius: 25;">
-         <children>
-            <Label layoutX="11.0" layoutY="34.0" prefHeight="56.0" prefWidth="655.0" text="votre voyage est bien saisie" textFill="#030540">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="48.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="362.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../image/kisspng-pdf-computer-icons-download-pdf-5b3643b91e7405.3244798015302829371247.png" />
          </image>
       </ImageView>
+      <JFXButton fx:id="imprimer" buttonType="RAISED" layoutX="355.0" layoutY="339.0" prefHeight="136.0" prefWidth="116.0" text="Imprimer" />
+      <ImageView fitHeight="251.0" fitWidth="609.0" layoutX="84.0" layoutY="88.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/hn0vgSOf5aB3tbJbkm1530tdjJw.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="201.0" layoutY="14.0" prefHeight="56.0" prefWidth="567.0" text="Le voyage est bien sauvgarder" textFill="#030540">
+         <font>
+            <Font name="Britannic Bold" size="40.0" />
+         </font>
+      </Label>
+      <Line endX="491.0" layoutX="261.0" layoutY="70.0" startX="-100.0" />
+      <Line endX="491.0" layoutX="261.0" layoutY="79.0" startX="-100.0" />
    </children>
 </AnchorPane>

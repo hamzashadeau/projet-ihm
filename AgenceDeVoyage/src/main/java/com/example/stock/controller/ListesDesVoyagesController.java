@@ -1,6 +1,7 @@
 package com.example.stock.controller;
 
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -74,23 +75,23 @@ public class ListesDesVoyagesController {
 
 	@Autowired
 	private VoyageService voyageService;
-
+List<Voyage> voyages = new ArrayList<Voyage>();
 	@FXML
 	public void initialize() {
 		chercher.setOnAction(event ->{
 			if(!prix.isSelected()) {
-				//vols = volService.findByPrix(Double.parseDouble(motif.getText()));
+				voyages = voyageService.findByPrix(Double.parseDouble(motif.getText()));
 			}else if(!destination.isSelected()) {
-				//vols =volService.findByDestination(motif.getText());
+				voyages =voyageService.findByDestination(motif.getText());
 				}else if(!date.isSelected()) {
 					ZoneId defaultZoneId = ZoneId.systemDefault();
 
-				//	vols =volService.findByDateDebut(Date.from(dateDeDebut.getValue().atStartOfDay(defaultZoneId).toInstant()));
+				voyages =voyageService.findByDateDebut(dateDebut.getValue());
 				}
 			voyageList.clear();
-			/*vols.forEach(emp ->{
-				volList.add(emp);
-			});*/
+			voyages.forEach(emp ->{
+				voyageList.add(emp);
+			});
 			voyagetable.setItems(voyageList);
 		});
 		setColumnProperties();

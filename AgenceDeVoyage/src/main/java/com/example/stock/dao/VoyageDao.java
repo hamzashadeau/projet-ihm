@@ -17,5 +17,6 @@ List<Voyage> findByDestination(String destination);
 List<Voyage> findByDestinationAndDeteDebutAndDetefin(String destination,LocalDate debut,LocalDate fin);	
 void deleteById(Long id);
 Optional<Voyage> findById(Long id);
+List<Voyage> findByPrix(Double prix);
 
 }

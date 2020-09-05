@@ -1,11 +1,14 @@
 package com.example.stock.controller;
 
+import java.util.Date;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.stock.Bean.Client;
+import com.example.stock.Bean.FactureVol;
+import com.example.stock.Bean.FactureVoyage;
 import com.example.stock.Bean.Voyage;
 import com.example.stock.Bean.VoyageClient;
 import com.example.stock.Service.Facade.ClientService;
@@ -13,6 +16,7 @@ import com.example.stock.Service.Facade.UserService;
 import com.example.stock.Service.Facade.VoyageClientService;
 import com.example.stock.Service.Facade.VoyageService;
 import com.example.stock.Tools.Tools;
+import com.example.stock.dao.FactureVoyageDao;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
@@ -153,9 +157,23 @@ public class CreeUnVoyageController {
 	      .limit(targetStringLength)
 	      .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
 	      .toString();
-	    System.out.println(generatedString);
 	    return generatedString;
 	}
+	private String numero;
+	
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	private Double prixnourriture;
+	private Double prixHotel;
+	private Double prixTotal;
+	private Double autre;
+	@Autowired
+	private FactureVoyageDao factureVoyageDao;
 	String codegenerated = null;
 	public void save() {
 		if(this.codegenerated != null) {
@@ -169,6 +187,44 @@ public class CreeUnVoyageController {
 			client.setEmail(email.getText());
 			clientService.save(client);
 		}
+		this.prixHotel =voyage1.getPrixHotel();
+		this.prixnourriture = voyage1.getPrixNourriture();
+		this.autre = voyage1.getAutre();
+		this.prixTotal = voyage1.getPrix();
+		FactureVoyage factureVol = new FactureVoyage();
+		factureVol.setAge(getType());
+		factureVol.setCodeClient(codeClient.getText());
+		factureVol.setDate(new Date());
+		voyageClient.setDate(new Date());
+		factureVol.setDateDebut(voyage1.getDeteDebut());
+		factureVol.setDateDeRetour(voyage1.getDetefin());
+		factureVol.setDestination(voyage1.getDestination());
+		factureVol.setEmail(email.getText());
+		factureVol.setGender(getGender());
+		factureVol.setEmail(email.getText());
+		factureVol.setNom(nomClient.getText());
+		factureVol.setNomHotel(voyage1.getHotel().getNom());
+		factureVol.setVolCompany(voyage1.getVolCompany().getNom());
+		factureVol.setPrenom(prenomClient.getText());
+		factureVol.setGender(getGender());
+		factureVol.setUserfirstName(loginController.user.getFirstName());
+		factureVol.setUserlasName(loginController.user.getLasName());
+		factureVol.setTelephone(telephone.getText());
+		if(getType()<10) {
+			this.prixHotel =voyage1.getPrixHotel()/2;
+			this.prixnourriture = voyage1.getPrixNourriture()/2;
+			this.autre = voyage1.getAutre()/2;
+			this.prixTotal = voyage1.getPrix()/2;
+			System.out.println("ana hna");
+					}
+		factureVol.setPrixHotel(this.prixHotel);
+		factureVol.setPrixNourriture(this.prixnourriture);
+		factureVol.setPrix(this.prixTotal);
+		factureVol.setAutre(this.autre);
+		this.numero = givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect();
+		factureVol.setNumeroFacture(this.numero);
+		factureVol.setId(Tools.generateRandomIntIntRange(1, 200));
+		factureVoyageDao.save(factureVol);
 		voyageClient.setNomVoyage(voyage1.getNomVoyage());
 		voyageClient.setCodeClient(codeClient.getText());
 		voyageClient.setTelephone(telephone.getText());

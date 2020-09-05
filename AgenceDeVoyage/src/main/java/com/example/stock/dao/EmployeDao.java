@@ -18,5 +18,5 @@ public interface EmployeDao extends JpaRepository<Employe, Long> {
 	Employe findByCodeEmploye(String codeEmploye);
 //	List<Client> findByVoyageId(Long id);
 	List<Employe> findByCin(String cin);
-
+	List<Employe> findByGender(String gender);
 }

@@ -185,6 +185,9 @@ vol1 = vol;
 		factureVol.setEmail(email.getText());
 		factureVol.setGender(getGender());
 		factureVol.setEmail(email.getText());
+		if(getType()<10) {
+			this.prixmod = this.prixmod/2;
+		}
 		factureVol.setPrix(prixmod);
 		factureVol.setNom(nomClient.getText());
 		factureVol.setPrenom(prenomClient.getText());

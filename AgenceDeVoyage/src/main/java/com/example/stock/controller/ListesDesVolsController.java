@@ -1,6 +1,7 @@
 package com.example.stock.controller;
 
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -49,13 +50,13 @@ public class ListesDesVolsController {
 	@FXML
 	private TableColumn<Vol, String> coldestination;
 	@FXML
+	private TableColumn<Vol, Double> colprix;
+	@FXML
 	private Button choisir;
 	
 //	@FXML
 	// private TableColumn<Voyage, String> colNomVol;
 
-	 @FXML
-	 private TableColumn<Voyage, Double> colprix;
 	private final FxControllerAndView<VolInfoController, AnchorPane> anotherControllerAndView;
 
 	private ObservableList<Vol> volList = FXCollections.observableArrayList();
@@ -74,24 +75,21 @@ private JFXCheckBox destination;
 private JFXCheckBox date;
 @FXML
 private JFXTextField motif;
-//@Autowired
-//private List<Vol> vols = new ArrayList<Vol>();
+private List<Vol> vols = new ArrayList<Vol>();
 	@FXML
 	public void initialize() {
 		chercher.setOnAction(event ->{
 			if(!prix.isSelected()) {
-				//vols = volService.findByPrix(Double.parseDouble(motif.getText()));
+				vols = volService.findByPrix(Double.parseDouble(motif.getText()));
 			}else if(!destination.isSelected()) {
-				//vols =volService.findByDestination(motif.getText());
+				vols =volService.findByDestination(motif.getText());
 				}else if(!date.isSelected()) {
-					ZoneId defaultZoneId = ZoneId.systemDefault();
-
-				//	vols =volService.findByDateDebut(Date.from(dateDeDebut.getValue().atStartOfDay(defaultZoneId).toInstant()));
+					vols =volService.findByDateDebut(dateDeDebut.getValue());
 				}
 			volList.clear();
-			/*vols.forEach(emp ->{
+			vols.forEach(emp ->{
 				volList.add(emp);
-			});*/
+			});
 			volTable.setItems(volList);
 		});
 		setColumnProperties();

@@ -1,19 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="statistiquepage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.stock.controller.AcceuilStatistiqueController">
    <children>
-      <ImageView fitHeight="524.0" fitWidth="760.0" layoutX="-3.0" opacity="0.7" pickOnBounds="true">
+      <ImageView fitHeight="524.0" fitWidth="760.0" layoutX="-3.0" opacity="0.55" pickOnBounds="true">
          <image>
             <Image url="@../../../image/Capture.PNG" />
          </image>
+         <effect>
+            <MotionBlur />
+         </effect>
       </ImageView>
-      <Button fx:id="bar" layoutX="31.0" layoutY="218.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="251.0" style="-fx-background-color: #31ADDC; -fx-font-size: 16px;" text="nombre de voyage organisé" textFill="#f5eded" />
-      <Button fx:id="barVol" layoutX="180.0" layoutY="301.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="251.0" style="-fx-background-color: #63122A; -fx-font-size: 16px;" text="nombre de vols" textFill="#f5f3f3" />
-      <Button layoutX="360.0" layoutY="380.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="251.0" style="-fx-background-color: #CD2433; -fx-font-size: 16px;" text="voyage organisé par mois" textFill="#f5eeee" />
+      <JFXButton fx:id="bar" buttonType="RAISED" layoutX="39.0" layoutY="423.0" prefHeight="37.0" prefWidth="340.0" style="-fx-background-color: #31ADDC;" text="revenu de voyages organisé Par mois" />
+      <JFXButton fx:id="barVol" buttonType="RAISED" layoutX="389.0" layoutY="423.0" prefHeight="37.0" prefWidth="340.0" style="-fx-background-color: #63122A;" text="revenus des vols par mois" textFill="#f5f0f0" />
+      <Label layoutX="253.0" layoutY="14.0" prefHeight="60.0" prefWidth="227.0" text="Statistique" textFill="#eb6104" textOverrun="CLIP">
+         <font>
+            <Font name="Colonna MT" size="49.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="301.0" layoutY="64.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="301.0" layoutY="74.0" startX="-100.0" />
+      <Line endX="-53.0" layoutX="536.0" layoutY="64.0" startX="-100.0" />
+      <Line endX="-51.0" layoutX="536.0" layoutY="74.0" startX="-100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="97.0" layoutX="39.0" layoutY="229.0" stroke="#f2eeee" width="212.0">
+         <effect>
+            <DropShadow color="#685755" />
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="87.0" fitWidth="75.0" layoutX="108.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/dc4eb9679903d1829b344fe4d04140bb.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="97.0" layoutX="271.0" layoutY="229.0" stroke="#f2eeee" width="212.0">
+         <effect>
+            <DropShadow color="#685755" />
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="73.0" fitWidth="75.0" layoutX="402.0" layoutY="241.0" opacity="0.66" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../../image/Picture4.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="97.0" layoutX="511.0" layoutY="229.0" stroke="#f2eeee" width="212.0">
+         <effect>
+            <DropShadow color="#685755" />
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="60.0" fitWidth="75.0" layoutX="638.0" layoutY="248.0" opacity="0.48" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../../image/Picture12.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="GenderMen" layoutX="52.0" layoutY="249.0" prefHeight="60.0" prefWidth="56.0" textFill="#f8f5f5">
+         <font>
+            <Font size="29.0" />
+         </font></Label>
+      <Label fx:id="nbrVoyage" layoutX="301.0" layoutY="254.0" prefHeight="47.0" prefWidth="87.0" textAlignment="CENTER" textFill="#f8f7f7">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="GenderWoman" layoutX="181.0" layoutY="248.0" prefHeight="60.0" prefWidth="56.0" textFill="#fcf7f7">
+         <font>
+            <Font size="29.0" />
+         </font></Label>
+      <Label fx:id="nbrVol" layoutX="537.0" layoutY="248.0" prefHeight="60.0" prefWidth="87.0" textFill="#fcf8f8">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font></Label>
+      <ImageView fitHeight="98.0" fitWidth="180.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/Picture13.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="249.0" layoutX="251.0" layoutY="74.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/travel%20(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="98.0" fitWidth="180.0" layoutX="548.0" layoutY="15.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../image/Picture13.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -18,7 +18,7 @@ public interface ClientVolService {
 	int save(ClientVol client);
 	List<ClientVol> findAll();
 	public void deleteById(Long id);
-	List<ClientVol> findByMonth(int month);
+	Double findByMonth(int month);
 	List<ClientVol> findByCodeClient(String codeClient);
 	List<ClientVol> findByVolId(Long id);
 	List<ClientVol> findByDate(LocalDate date);

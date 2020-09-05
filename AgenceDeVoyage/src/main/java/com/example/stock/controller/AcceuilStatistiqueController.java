@@ -4,10 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.stock.Bean.User;
+import com.example.stock.Service.Facade.ClientVolService;
+import com.example.stock.Service.Facade.EmployeService;
 import com.example.stock.Service.Facade.VoyageClientService;
+import com.jfoenix.controls.JFXButton;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import net.rgielen.fxweaver.core.FxControllerAndView;
 import net.rgielen.fxweaver.core.FxWeaver;
@@ -20,10 +23,17 @@ public class AcceuilStatistiqueController {
 	@FXML
 	private AnchorPane statistiquepage;
 	@FXML
-	private Button bar;
+	private JFXButton bar;
 	@FXML
-	private Button barVol;
-	
+	private JFXButton barVol;
+	@FXML
+	private Label nbrVoyage;
+	@FXML
+	private Label GenderMen;
+	@FXML
+	private Label GenderWoman;
+	@FXML
+	private Label nbrVol;
 	
 	public AcceuilStatistiqueController(FxWeaver fxWeaver,
 			FxControllerAndView<BarListController, AnchorPane> anotherControllerAndView1,
@@ -43,9 +53,21 @@ public class AcceuilStatistiqueController {
 
 	public static User user;
 
-
+@Autowired
+private ClientVolService clientVolService;
+@Autowired
+private EmployeService employeService;
 	@FXML
 	public void initialize() {
+		int nbr =voyageClientService.findAll().size();
+		this.nbrVoyage.setText(String.valueOf(nbr));
+		int nbrVol =clientVolService.findAll().size();
+		this.nbrVol.setText(String.valueOf(nbrVol));
+		int nbrEmployeMen =employeService.findByGender("male").size();
+		this.GenderMen.setText(String.valueOf(nbrEmployeMen));
+		int nbrEmployeWoman =employeService.findByGender("female").size();
+		this.GenderWoman.setText(String.valueOf(nbrEmployeWoman));
+		
 		bar.setOnAction(event ->{
 			//	FxControllerAndView<BarListController, AnchorPane> add_team = fxWeaver.load(BarListController.class);
 			 //   borderpane.setCenter(add_team.getView().get());
